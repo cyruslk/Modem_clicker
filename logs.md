@@ -114,7 +114,7 @@ I took some time to build and reflect on my last bot, the [slow sender meme bot]
 
 I would also like to show here a serie of images/projects that had an impact on my thoughts. I'll drop them here and explain how they relate to my researches.
 
-- Disrupting the flow 
+- DISRUPTING THE FLOW 
 
 
 ![alt text](https://66.media.tumblr.com/71a52c9b3787764fe53763f5dcdef63a/tumblr_o4zdxwrgGf1qixa76o1_640.png)
@@ -122,25 +122,27 @@ I would also like to show here a serie of images/projects that had an impact on 
 
 
 
-dvdfvfdvf
+This image comes from [this project](http://theartofgooglebooks.tumblr.com/). It's basically a Google employee's Hand captured while digitalizing a book; contributing on Google's initiative/attemps to create "[the largest online body of human knowledge](https://en.wikipedia.org/wiki/Google_Books)". This image is very interesting because it reveals the process (by showing its failure). In other words it reveals that even if Google attempted to create a digital (and then smooth, seamless) archive of knowledge, this failed because of the Human intervention - because of the underlying Human factor. This image consequently disrupt the flow (and the Blackbox) Google attempted to create.
 
 
 
-![alt text](https://www.hackread.com/wp-content/uploads/2015/05/80-funniest-creepiest-strangest-disturbing-google-street-view-images-60.jpg?x68593)
-
-dvdfvfdvf
+![alt text](https://66.media.tumblr.com/d14a80a276096a21c384623e60f4c65e/tumblr_mtb5517KTS1qzun8oo1_1280.jpg)
 
 
-- From maps to territories (...and trajectories) 
+This image comes from [this project](http://9-eyes.com/). It's basically a guy throwing a bottle of coca-cola to the [Google Street View](https://www.google.com/streetview/understand/) car. This is also interesting because it shows the failure behind the "semingless" attempt: it shows the incident that goes against the appearance Google is communicating and - again - disrupt a smooth characteristics of the initiative.
+
+- FROM MAPS TO TERRITORIES (...AND TRAJECTORIES) 
 
 
 ![alt text](https://66.media.tumblr.com/1c84b053564a6ff3cb2b78df3b3f2dfe/tumblr_o7708fSaqV1qixa76o1_1280.png)
 
-dvdfvfdvf
+This comes from [this project](http://9-eyes.com/). It's a scan of the circulation slip with the dates when the book was borrowed. What I like with this image is that it reveals that these scans are a) coming from a physical object and that b) this object had therefore a trajectory in a variety of contexts.
 
 
 
 ![alt text](https://img00.deviantart.net/387f/i/2015/115/9/9/archangel_michael_byzantine_icon_by_vanouka-d4t443o.jpg)
 
 
-dvdfvfdvf
+
+This image is a [Byzantine Icon with a watermark on top](https://www.google.ca/search?q=watermarked+byzantine+icon&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiy_8Se5sXeAhUFm-AKHRTkBjsQ_AUIDigB&biw=1593&bih=857). Here there's a double trajectory happening inside the image: a) from the geographically located painting to the digitalized photo (the icon without losing aura); and b) from the photo to this watermarked Stock photo. What I like here is 1) that the image shows both part of the process and the final form and 2) that each of these shown trajectories are impacting the final form of the object.
+
