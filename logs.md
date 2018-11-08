@@ -97,18 +97,14 @@ I took some time to build and reflect on my last bot, the [slow sender meme bot]
   **Debord, Guy**
 
   "Right after we graduated from the Gerrit Rietveld Academie, there was a period in which we were really influenced by Guy Debord's *The Society of the Spectacle* (1967), especially the first chapter.
-
   Althought this was just a short period, the impact of this book is still showing in our work. In *The Society of the Spectacle*, Debord critically describes a society dominated by images and representations, and the alientation caused by this.
-
   We really agreed with this critique, and were thinking of ways to intrgrate it into our design work.
-
   We translated Debord's theory in a quite literal (and maybe slightly naive) way: we tried to design in a "non-representative" manner. In other words, we wanted to design objects that would function not as images, but as material objects. Objects that would point to the physical world, the material base that was hidden underneath the world of images. 
-
   To give an example of this: we decided to never use photography in our work, as we believed that photography (especially full-color photogaphy) would imprison the viewer in an illusion, in a false representation of reality. For instance, when designing a poster, we would use typography only, so that the poster would be recognizable as just a printed piece of paper, not as an image. That also explains the use of white/empty space in our work: we want the viewer to use the paper itself, to cut through the world of images, and see the material base behind it. By constantly referring to the material base behind everything, we want to make the viewer aware that this world is a makeable world, a world that is made by humans (and thus also has the potential to be changed by humans). 
 
   Nowadays, our views are a little less dogmatic. For an example, we new use photography in our work, occasionally.But we're still very interested in the concept of design that refers to the material base: design that refers to itself, or to its own context."
 
-  Marie Lousie (interview with deValence), issue 2, Édsitions F7, France, 2006
+  *Marie Lousie (interview with deValence), issue 2, Édsitions F7, France, 2006*
 
    
 
