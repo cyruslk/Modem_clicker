@@ -16,16 +16,16 @@ In the [Master's Thesis Draft](https://docs.google.com/document/d/1Wq8xWYlTZ7X-d
 
 -  "On the one hand, the internet appears as an immaterial system, characterised by light minimal user interfaces and clouds of data. On the hand, **internet is operated by a series of (wired) physical components: ranging from undersea cables, modems and routers**."
 
--  "On the one hand, internet appears as a silent stack of protocols, performing their actions transparently. On the other hand, **internet originated from sounds/sonic agencies; noisy telephone lines, using screeching modems in order toestablish connections**."
+-  "On the one hand, internet appears as a silent stack of protocols, performing their actions transparently. On the other hand, **internet originated from sounds/sonic agencies; noisy telephone lines, using screeching modems in order to establish connections**."
 
 -  "On the one hand, the internet appears as an immediate system of data transmission, characterized by a perfect data flow. On the other hand, **internet is punctuated by delays, failures and other frequent protocol anomalies**."
 
 TO COME : 
 
-- [ ] Protocols? 
+- [x] Protocols? 
 
-- [ ] Internet's materiality vs ISP's marketing strategies?
-- [ ] Reveal internet's Materiality? Why?
+- [x] Internet's materiality vs ISP's marketing strategies?
+- [x] Reveal/Explore internet's Materiality? Why?
 
 ------
 
@@ -48,7 +48,7 @@ This fact that internet is a messy, physical, odd, weird, delayed, irregular (an
 
 The first one is [Protocol: How Control Exists after Decentralization](https://mitpress.mit.edu/books/protocol) by Alexander Galloway. I detailed the intersections between Galloway's book and my researches in [these logs](https://github.com/cyruslk/MODEMGUESSINGGAME/blob/master/logs.md) so I won't go back to the core ideas of the book; except that, to make it simple, even if Internet's infrastructure is distributed, there is a whole embeded system of **control and structure** in it; and **it resides largly in internet's transmitting protocols**.
 
-There's a lot of [research being made these days](https://socialmediacollective.org/reading-lists/critical-algorithm-studies/) about the fact that Algorithms are normative apparatuses imposing on us their agency but reading Galloway's Protocol made me realised that very little was made in order to investigate the infrastucture where these algorithms operate (as well as others components of internet that all have an agency on the system itself - internet).
+There's a lot of [research being made these days](https://socialmediacollective.org/reading-lists/critical-algorithm-studies/) about the fact that Algorithms are normative apparatuses imposing on us their agency. But reading Galloway's Protocol made me realised that very little was made in order to investigate the infrastucture where these algorithms operate (as well as others components of internet - all having an agency on the system itself - internet).
 
 **Galloway's Protocol made me realize that transmitting protocols need consequently to be questioned, and that we need as scholars and researchers question the way they perform on us; the way they impose their embeded set of values and rules on us.**
 
@@ -66,4 +66,31 @@ However, what struck me the most through this book is the general position ISP (
 
 ------
 
-Ash, who has worked for decades on undersea cable design and installation, he pressed me on my interest in making cables visible. “**Why would you want to know?**” he asked. “When you turn on a computer and you send an e-mail, do you really care how it works? No, you just want e-mail there, and you start drumming the table if it takes thirty seconds. (Starosielski, 2015)
+"Ash, who has worked for decades on undersea cable design and installation, he pressed me on my interest in making cables visible. “**Why would you want to know?**” he asked. “When you turn on a computer and you send an e-mail, do you really care how it works? No, you just want e-mail there, and you start drumming the table if it takes thirty seconds." (Starosielski, 2015)
+
+------
+
+# 2018-11-07 | 15:09
+
+I took some time to build and reflect on my last bot, the [slow sender meme bot](https://github.com/cyruslk/debord_slow_sender_meme). From [2XTWEETSXMODEMSXTEXTXTWEET](https://twitter.com/2XTXMXTXT) to [OROBOROGRAM](https://twitter.com/oroborogram), [PROCEDURAL_HAÏKUS](https://twitter.com/d__w__h) and these modem games/interactions I'll dive in very soon, there's definitely  body of problematics and investigations.
+
+- [x] Reveal/Explore internet's Materiality? Why?
+
+- CONTEXT : From this excerpt of Starosielski's book, ISP (and other private agents providing access internet) are striving to label internet as **a black-box**. 
+
+  A black-box is defined by **its opaque** characteristics. When we talk about a blak-box, we usually don't know the box itself: we know the inputs (the data passed in) and the outputs (the data *returned*) of this box without any knowledge of its internal workings.
+
+  Approaching internet (and computers) as an ecology of black-boxes is frequent. From social-medias apps with [opaque ways to manage our datas](https://www.propublica.org/article/breaking-the-black-box-what-facebook-knows-about-you) to [algorithms](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing) (with biases that we can't decrypt due do copyright), internet is composed of a variety of opaque boxes.
+
+  This makes internet a very political space, where we - as citizens - are not aware of what's going on behind the curtains and are not in total control of our interactions with these spaces.
+
+- CONTEXT : In addition, it's also clear that **code is law** - as Lawrence Lessig said it in his    [Code version 2.0'](http://codev2.cc/download+remix/Lessig-Codev2.pdf)s book. From protocols, to algorithms and therefore source code  (programming languages used to code and their embeded logics), internet is an ecology of values, norms and laws to abide by.
+
+- CONTEXT : To draw on Golloway's Protocols, these components are where internet's system of control and structure reside. It's because these components are crafted these ways/enable these affordances and these possibilities that ISP and other agents are able to [monitor, listen and store our data,](https://www.theguardian.com/commentisfree/2018/mar/28/all-the-data-facebook-google-has-on-you-privacy) change the ([spatio](https://en.wikipedia.org/wiki/IP_address_blocking)/[temporal](https://en.wikipedia.org/wiki/Bandwidth_throttling)) characteristics of the network and so on and so on.
+
+- STATEMENT : Consequently, exploring (or questioning, revealing, breaking) the way internet (through its materiality) operate is in my sense a very political and subersive act. 
+
+  ------
+
+  These thoughts are related to what [Experimental Jetset](https://www.experimentaljetset.nl/) expressed in their [Statement and Counter-Statement](https://www.experimentaljetset.nl/250/) book/index of interviews. I came across these thoughts three years ago and they had an important impact on my approach of design.
+
