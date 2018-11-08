@@ -114,7 +114,7 @@ I took some time to build and reflect on my last bot, the [slow sender meme bot]
 
 I would also like to show here a serie of images/projects that had an impact on my thoughts. I'll drop them here and explain how they relate to my researches.
 
-- **Disrupting the flow** 
+- Disrupting the flow 
 
 
 ![alt text](https://66.media.tumblr.com/71a52c9b3787764fe53763f5dcdef63a/tumblr_o4zdxwrgGf1qixa76o1_640.png)
@@ -122,24 +122,25 @@ I would also like to show here a serie of images/projects that had an impact on 
 
 
 
+dvdfvfdvf
+
+
 
 ![alt text](https://www.hackread.com/wp-content/uploads/2015/05/80-funniest-creepiest-strangest-disturbing-google-street-view-images-60.jpg?x68593)
 
+dvdfvfdvf
 
 
-- **From maps to territories (...and trajectories) **
+- From maps to territories (...and trajectories) 
 
 
 ![alt text](https://66.media.tumblr.com/1c84b053564a6ff3cb2b78df3b3f2dfe/tumblr_o7708fSaqV1qixa76o1_1280.png)
 
-![alt text](https://scontent.fybz1-1.fna.fbcdn.net/v/t1.0-9/22405627_10211791716443274_8347552672834150246_n.jpg?_nc_cat=106&_nc_ht=scontent.fybz1-1.fna&oh=bc3c39910e107ea0e739543f5555fadd&oe=5C86E6C8)
+dvdfvfdvf
 
- 
+
 
 ![alt text](https://img00.deviantart.net/387f/i/2015/115/9/9/archangel_michael_byzantine_icon_by_vanouka-d4t443o.jpg)
 
-- **The agency of the tool (and the way its materiality perform on the thing being crafted) **
 
-
-![alt text](http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1541709066/vd_qebzg1.jpg)
-
+dvdfvfdvf
