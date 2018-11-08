@@ -156,6 +156,3 @@ This image is a portrait of me by my grandma. It had been made in the context of
 
 # 2018-11-08 | 17:54
 
-- [ ] Protocols: embeded values on language?
-
-Narrowing down to transmitting protocols, it's clear that these have a (translating?) agency on data. They encapsulate their values on data and on how data should be formatted in order to follow the protocol. 
