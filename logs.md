@@ -112,7 +112,7 @@ I took some time to build and reflect on my last bot, the [slow sender meme bot]
 
 # 2018-11-08 | 14:31
 
-I would also like to show here a serie of images/projects that had an impact on my thoughts. I'll drop them here and explain how they relate to my researches.
+I would also like to show here a serie of images/projects that had an impact on my thoughts and initiated in a way these modems projects and bots. I'll drop them here and explain how they relate to my researches.
 
 - DISRUPTING THE FLOW 
 
@@ -136,13 +136,19 @@ This image comes from [this project](http://9-eyes.com/). It's basically a guy t
 
 ![alt text](https://66.media.tumblr.com/1c84b053564a6ff3cb2b78df3b3f2dfe/tumblr_o7708fSaqV1qixa76o1_1280.png)
 
-This comes from [this project](http://9-eyes.com/). It's a scan of the circulation slip with the dates when the book was borrowed. What I like with this image is that it reveals that these scans are a) coming from a physical object and that b) this object had therefore a trajectory in a variety of contexts.
+This comes from [this project](http://theartofgooglebooks.tumblr.com/). It's a scan of the circulation slip with the dates when the book was borrowed. What I like with this image is that it reveals that these scans are a) coming from a physical object and that b) this object had therefore a trajectory in a variety of contexts.
 
 
 
 ![alt text](https://img00.deviantart.net/387f/i/2015/115/9/9/archangel_michael_byzantine_icon_by_vanouka-d4t443o.jpg)
 
-
-
 This image is a [Byzantine Icon with a watermark on top](https://www.google.ca/search?q=watermarked+byzantine+icon&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiy_8Se5sXeAhUFm-AKHRTkBjsQ_AUIDigB&biw=1593&bih=857). Here there's a double trajectory happening inside the image: a) from the geographically located painting to the digitalized photo (the icon without losing aura); and b) from the photo to this watermarked Stock photo. What I like here is 1) that the image shows both part of the process and the final form and 2) that each of these shown trajectories are impacting the final form of the object.
+
+
+- TRANSLATIONS THROUGH THE AFFORDANCES/RESTRICTIONS OF TOOLS
+
+
+![alt text](http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1541709066/vd_qebzg1.jpg)
+
+This image is a portrait of me by my grandma. It had been made in the context of a project I initiated for a publication asking researchers to reflect on perception. Through this project, I wanted to reflect on the role of the tool: on how the rool is impacting through its embeded affordances/restrictions the way we interact and perceive.  I was also interested to explore the way one language/state (words?) is being translated into another one (drawings?) and how this translation affects the information being passed.
 
