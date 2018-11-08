@@ -25,8 +25,8 @@ TO COME :
 - [x] Protocols? 
 - [x] Internet's materiality vs ISP's marketing strategies?
 - [x] Reveal/Explore internet's Materiality? Why?
-- [ ] Protocols: embeded values?
-- [ ] Using Modems?
+- [ ] Protocols: embeded values on language?
+- [ ] Using Modems to make these values tangible?
 - [ ] Translations?
 
 ------
@@ -152,3 +152,10 @@ This image is a [Byzantine Icon with a watermark on top](https://www.google.ca/s
 
 This image is a portrait of me by my grandma. It had been made in the context of a project I initiated for a publication asking researchers to reflect on perception. Through this project, I wanted to reflect on the role of the tool: on how the rool is impacting through its embeded affordances/restrictions the way we interact and perceive.  I was also interested to explore the way one language/state (words?) is being translated into another one (drawings?) and how this translation affects the information being passed.
 
+
+
+# 2018-11-08 | 17:54
+
+- [ ] Protocols: embeded values on language?
+
+Narrowing down to transmitting protocols, it's clear that these have a (translating?) agency on data. They encapsulate their values on data and on how data should be formatted in order to follow the protocol. 
