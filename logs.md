@@ -129,6 +129,7 @@ I would also like to show here a serie of images/projects that had an impact on 
 
 - **From maps to territories (...and trajectories) **
 
+
 ![alt text](https://66.media.tumblr.com/1c84b053564a6ff3cb2b78df3b3f2dfe/tumblr_o7708fSaqV1qixa76o1_1280.png)
 
 ![alt text](https://scontent.fybz1-1.fna.fbcdn.net/v/t1.0-9/22405627_10211791716443274_8347552672834150246_n.jpg?_nc_cat=106&_nc_ht=scontent.fybz1-1.fna&oh=bc3c39910e107ea0e739543f5555fadd&oe=5C86E6C8)
@@ -142,9 +143,3 @@ I would also like to show here a serie of images/projects that had an impact on 
 
 ![alt text](http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1541709066/vd_qebzg1.jpg)
 
-- **Inserting inside the network **
-
-
-![alt text](https://www.tate.org.uk/art/images/work/T/T12/T12328_10.jpg)
-
-![alt text](https://catalog.rhizome.org/images/5/5a/Ca-19.jpg)
