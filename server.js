@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/api/hello', (req, res) => {
   res.send({ express: 'Hello World!' });
 });
+
 app.post('/api/world', (req, res) => {
   console.log(req.body);
   res.send(
@@ -24,7 +25,15 @@ app.post('/api/world', (req, res) => {
 
 
 io.on('connection', socket => {
-  console.log('User connected')
+  console.log('User connected');
+
+
+    socket.on('subscribeToTimer', (interval) => {
+      console.log('client is subscribing to timer with interval ', interval);
+      setInterval(() => {
+        client.emit('timer', new Date());
+      }, interval);
+    });
 
   socket.on('disconnect', () => {
     console.log('user disconnected')

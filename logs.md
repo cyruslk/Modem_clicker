@@ -160,3 +160,32 @@ Started to work on the server side of the project. The main file of the server s
 
 I'm also install socket.io both on the server and the client (React.js). ["Socket.IO is a library that enables real-time, bidirectional and event-based communication between the browser and the server."](https://socket.io/docs/)
 
+
+
+# 2018-11-09 | 11:37
+
+I'll work with socket.io because it will help me to pass *in real time* data between the server and the client. By using sockets, I will be able to pass a variety of user's inputs from the client to the server side without **having to refresh the page.**
+
+Here's a list of user's inputs I could use for this project using React's [SyntheticEvent](https://reactjs.org/docs/events.html):
+
+- Mouse coordinates + Mouse clicks
+- Wheel events?
+- Keyboard events?
+- Media Events?
+
+------
+
+I'm finishing *Racing the Beam: The Atari Video Computer System*, by Nick Montfort and Ian Bogost. This book is really interesting because it clearly shows how interactions (through the case study of the Atari Computer System) depends on the physicality of their underlying Platform: the cartridge, the microprocessor and so on.
+
+It also clearly reflect that a design (and art) practice is always embeded into what Donald Schön calls a "reflection-in-action" process. The game designers and engineers behind *Tank*, *Combat*, *Pac-Man* and others were reflecting *in action* on their processes and ways to solve the variety of problems they encountered.
+
+------
+
+I'm in the process of building the core interactions between the `server` and the `client` side.
+
+For now, the client side is able to send/receive data coming from the server.
+
+
+
+
+
