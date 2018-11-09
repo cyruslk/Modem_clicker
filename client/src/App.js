@@ -11,7 +11,9 @@ class App extends React.Component{
             width: 0,
             height: 0,
             x: 0,
-            y: 0
+            y: 0,
+            xx: 0,
+            yy: 0
         };
 
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
@@ -19,15 +21,13 @@ class App extends React.Component{
 
 
         this.socket = io('localhost:5000');
-        this.socket.on('RECEIVE_COORDINATES', function(data){
-            console.log("this is the data", data);
+        this.socket.on('RECEIVE_COORDINATES', (data) => {
+            this.setState({
+              xx: data.x,
+              yy: data.y
+            })
         });
 
-
-        const addMessage = data => {
-            console.log(data);
-            console.log(this.state.messages);
-        };
 
         this.sendCoordinates = ev => {
             this.socket.emit(
@@ -62,11 +62,13 @@ class App extends React.Component{
 
     render(){
         return (
-            <div
-            className="container"
-            onMouseMove={this._onMouseMove}
-            onClick={this.sendCoordinates}>
-              {this.state.x}, {this.state.y}
+            <div className="container" onMouseMove={this._onMouseMove}>
+                <div>
+                {this.state.x}, {this.state.y}
+                </div>
+                <div>
+                {this.state.xx}, {this.state.yy}
+                </div>
             </div>
         );
     }

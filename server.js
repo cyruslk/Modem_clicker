@@ -11,7 +11,6 @@ server = app.listen(5000, function(){
 io = socket(server);
 
 io.on('connection', (socket) => {
-    // console.log(socket.id);
     socket.on('SEND_COORDINATES', function(data){
         console.log(data);
         io.emit('RECEIVE_COORDINATES', data);

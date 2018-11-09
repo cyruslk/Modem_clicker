@@ -193,6 +193,7 @@ EDIT 1: I now have a script that displays the mouse coordinates. The idea is to 
 
 ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Capture%20d%E2%80%99%C3%A9cran%202018-11-09%20%C3%A0%2016.45.16.png)
 
+
 EDIT 2: In the `server.js`, I'm now able to retreive these coordinates using the `socket.on()` method of `socket.io`.
 
 Here's the code where these coordinates are logged:
@@ -208,7 +209,8 @@ io.on('connection', (socket) => {
 ```
 
 Here is a screenshot of my terminal:
-![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Capture%20d%E2%80%99%C3%A9cran%202018-11-09%20%C3%A0%2016.58.31.png)
+![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Capture%20d%E2%80%99%C3%A9cran%202018-11-09%20%C3%A0%2017.15.20.png)
+
 
 EDIT 3: In the `App.js` of my client  side, I'm now able to retrieve the data sent from the server (and initiated on the client side). Here's the code where I'm logging this data:
 
@@ -216,5 +218,26 @@ EDIT 3: In the `App.js` of my client  side, I'm now able to retrieve the data se
         this.socket.on('RECEIVE_COORDINATES', function(data){
         console.log("this is the data", data);
         });
+Here is a screenshot of my browser's console:
+![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Capture%20d%E2%80%99%C3%A9cran%202018-11-09%20%C3%A0%2017.05.46.png)
+
+
+EDIT 4: In the `App.js` again, I'm now able to retrieve the data coming from the server and display it in the webpage. This is the code I'm using here:
+
+        this.socket = io('localhost:5000');
+        this.socket.on('RECEIVE_COORDINATES', (data) => {
+            this.setState({
+              xx: data.x,
+              yy: data.y
+            })
+        });
+As soon as the data is in the [state](https://reactjs.org/docs/state-and-lifecycle.html), I'm displaying it like this:
+
+```
+<div>
+	{this.state.xx}, {this.state.yy}
+</div>
+```
+
 Here is a screenshot of my browser's console:
 ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Capture%20d%E2%80%99%C3%A9cran%202018-11-09%20%C3%A0%2017.05.46.png)
