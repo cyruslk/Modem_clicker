@@ -1,43 +1,20 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const app = express();
-const port = process.env.PORT || 5000;
-const socketIO = require('socket.io')
+var express = require('express');
+var socket = require('socket.io');
 
-const http = require('http')
-const server = http.createServer(app)
-const io = socketIO(server)
+var app = express();
 
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.get('/api/hello', (req, res) => {
-  res.send({ express: 'Hello World!' });
+server = app.listen(5000, function(){
+    console.log('server is running on port 5000')
 });
 
-app.post('/api/world', (req, res) => {
-  console.log(req.body);
-  res.send(
-    `I received your POST request. This is what you sent me: ${req.body.post}`,
-  );
+io = socket(server);
+
+io.on('connection', (socket) => {
+    console.log(socket.id, "this");
+
+    socket.on('SEND_COORDINATES', function(data){
+        console.log(data, "is this coming?");
+        io.emit('RECEIVE_COORDINATES', data);
+    })
 });
-
-
-io.on('connection', socket => {
-  console.log('User connected');
-
-
-    socket.on('subscribeToTimer', (interval) => {
-      console.log('client is subscribing to timer with interval ', interval);
-      setInterval(() => {
-        client.emit('timer', new Date());
-      }, interval);
-    });
-
-  socket.on('disconnect', () => {
-    console.log('user disconnected')
-  })
-})
-
-server.listen(port, () => console.log(`Listening on port ${port}`))

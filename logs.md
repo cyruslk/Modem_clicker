@@ -183,9 +183,13 @@ It also clearly reflect that a design (and art) practice is always embeded into 
 
 I'm in the process of building the core interactions between the `server` and the `client` side.
 
-For now, the client side is able to send/receive data coming from the server.
+For now, the client side is able to send/receive data coming from the server. Here, the `Hello World` text is coming from the server and when I submit data using the input, it's sent to the server.
 
+![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Capture%20d%E2%80%99%C3%A9cran%202018-11-09%20%C3%A0%2012.14.45.png)
 
+This idea is now to implement `sockets` in order to send data in real time without having to refresh the client page. 
+
+EDIT 1: I now have a script that displays the mouse coordinates. The idea is to pass these coordinates to the server now.
 
 
 
