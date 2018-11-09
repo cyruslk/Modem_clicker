@@ -239,5 +239,6 @@ As soon as the data is in the [state](https://reactjs.org/docs/state-and-lifecyc
 </div>
 ```
 
-Here is a screenshot of my browser's console:
-![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Capture%20d%E2%80%99%C3%A9cran%202018-11-09%20%C3%A0%2017.05.46.png)
+Here is a screenshot of my browser's console. The first set of coordinates are coming from the browser - the last ones from the server.
+ 
+![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Capture%20d%E2%80%99%C3%A9cran%202018-11-09%20%C3%A0%2017.35.07.png)
