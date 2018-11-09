@@ -30,12 +30,11 @@ class App extends React.Component{
         };
 
         this.sendCoordinates = ev => {
-            alert("hell")
-            ev.preventDefault();
-            this.socket.emit('SEND_COORDINATES', {
-                coordinates: this.state.coordinates
+            this.socket.emit(
+              'SEND_COORDINATES', {
+              x: this.state.x,
+              y: this.state.y,
             })
-            this.setState({coordinates: ''});
 
         }
     }
@@ -50,11 +49,14 @@ class App extends React.Component{
     }
 
     updateWindowDimensions() {
-      this.setState({ width: window.innerWidth, height: window.innerHeight });
+      this.setState({
+        width: window.innerWidth,
+        height: window.innerHeight });
     }
 
     _onMouseMove(e) {
       this.setState({ x: e.screenX, y: e.screenY });
+      this.sendCoordinates();
     }
 
 

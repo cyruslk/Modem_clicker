@@ -191,5 +191,20 @@ This idea is now to implement `sockets` in order to send data in real time witho
 
 EDIT 1: I now have a script that displays the mouse coordinates. The idea is to pass these coordinates to the server now.
 
+![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Capture%20d%E2%80%99%C3%A9cran%202018-11-09%20%C3%A0%2016.45.16.png)
 
+EDIT 2: In the `server.js`, I'm now able to retreive these coordinates using the `socket.on()` method of `socket.io`.
 
+Here's the code where these coordinates are logged.
+
+```
+io.on('connection', (socket) => {
+    // console.log(socket.id);
+    socket.on('SEND_COORDINATES', function(data){
+        console.log(data);
+        io.emit('RECEIVE_COORDINATES', data);
+    })
+});
+```
+
+This is a screenshot of my terminal:
