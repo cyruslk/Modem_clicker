@@ -154,5 +154,9 @@ This image is a portrait of me by my grandma. It had been made in the context of
 
 
 
-# 2018-11-08 | 17:54
+# 2018-11-08 | 20:01
+
+Started to work on the server side of the project. The main file of the server side is `server.js`. I'll work with `express` in order to manage the route between the server and the client (made using [React.js](https://reactjs.org/)). 
+
+I'm also install socket.io both on the server and the client (React.js). ["Socket.IO is a library that enables real-time, bidirectional and event-based communication between the browser and the server."](https://socket.io/docs/)
 
