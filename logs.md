@@ -217,4 +217,4 @@ EDIT 3: In the `App.js` of my client  side, I'm now able to retrieve the data se
         console.log("this is the data", data);
         });
 Here is a screenshot of my browser's console:
-
+![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Capture%20d%E2%80%99%C3%A9cran%202018-11-09%20%C3%A0%2017.05.46.png)
