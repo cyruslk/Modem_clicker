@@ -20,7 +20,7 @@ class App extends React.Component{
 
         this.socket = io('localhost:5000');
         this.socket.on('RECEIVE_COORDINATES', function(data){
-            addMessage(data);
+            console.log("this is the data", data);
         });
 
 

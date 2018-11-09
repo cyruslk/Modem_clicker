@@ -195,7 +195,7 @@ EDIT 1: I now have a script that displays the mouse coordinates. The idea is to 
 
 EDIT 2: In the `server.js`, I'm now able to retreive these coordinates using the `socket.on()` method of `socket.io`.
 
-Here's the code where these coordinates are logged.
+Here's the code where these coordinates are logged:
 
 ```
 io.on('connection', (socket) => {
@@ -207,4 +207,14 @@ io.on('connection', (socket) => {
 });
 ```
 
-This is a screenshot of my terminal:
+Here is a screenshot of my terminal:
+![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Capture%20d%E2%80%99%C3%A9cran%202018-11-09%20%C3%A0%2016.58.31.png)
+
+EDIT 3: In the `App.js` of my client  side, I'm now able to retrieve the data sent from the server (and initiated on the client side). Here's the code where I'm logging this data:
+
+    this.socket = io('localhost:5000');
+        this.socket.on('RECEIVE_COORDINATES', function(data){
+        console.log("this is the data", data);
+        });
+Here is a screenshot of my browser's console:
+
