@@ -247,6 +247,43 @@ Here is a screenshot of my browser's console. The first set of coordinates are c
 
 # 2018-11-10 | 10:37
 
+
+
 ![alt text](http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1541828495/dscs_w6pzdh.jpg)
 
+
+This is the [Simple Net Art Diagram](http://www.mtaa.net/mtaaRR/off-line_art/snad.html). It's very significative of the Net Art movement; and this image had a lot of imapct on my researches and my design practice. What I like with this is that it's quite absurd  - and at the same time very poetic. It clearly shows here that *the art* resides in the network, in the in-between spaces behind the objects; and that *the art* is more an interaction than a concrete and defined object   
+
 ![alt text](https://www.tate.org.uk/art/images/work/T/T12/T12328_10.jpg)
+
+
+
+[Cildo Meireles. *Insertions into Ideological Circuits: Coca-Cola Project* (1970)](https://www.daros-latinamerica.net/ensayo/cildo-meireles-insertions-ideological-circuits) In short, this project is located on the economic circuit of the coca-cola bottle inside the Brazilian chain of production and supply. Subversive messages ("YANKEES GO HOME!", recipes to create a Molotov cocktail) are written in white on these bottles. Therefore, when the bottle is full, *users* are able to see them; but when the bottle is emptied and go back to the factory, these messages disappear. 
+
+------
+
+I like these projects because they're using the affordances and restrictions of the network as a *playground*, a field of actions. For this reason, I feel very much inspired by movements such as [Cybernetics](https://en.wikipedia.org/wiki/Cybernetics), [Net art](https://en.wikipedia.org/wiki/Internet_art), [Systems art](https://en.wikipedia.org/wiki/Systems_art), [Actor–network theory](https://en.wikipedia.org/wiki/Actor%E2%80%93network_theory) and others - approaching networks with their agencies, values, ways they perform specific behaviours and ways we could - as designers, artists and scholars - investigate and question them.
+
+These projects are, and its obvious in the case of Meireles' *Insertions into Ideological Circuits*,  what I would like to call **(subversive) Ouroboros strategies.** 
+
+![alt text](https://upload.wikimedia.org/wikipedia/commons/8/87/Ouroboros_1.jpg)
+
+Illustration of an Ouroboros: depicting a serpent biting its own tail.
+
+In these cases, the affordances and restrictions of the network are taken into consideration in order to create a counter discourse; to return the network against its own ideological values.
+
+
+- [x] Protocols: embeded values on language?
+
+In the context of these modems investigations entangled inside internet's network, my goal is to investigate (using *sonic strategies*) how the network is shaped; how its proceduralities work. Reading [this excerpt of *The Rhetoric of Video Games*](http://www.cogsci.rpi.edu/public_html/ruiz/EGDFall2013/readings/RhetoricVideoGames_Bogost.pdf) by Ian Bogost, I came accross the crucial idea of Procedural/Software authorship:
+
+"Procedurality in this sense refers to the core practice of software authorship. Software is composed of algorithms that model the way things behave. To write procedurally, one authors code that enforces rules to generate some kind of representation, rather than authoring the representation itself. Procedural systems generate behaviors based on rulebased models; they are machines capable of producing many outcomes, each conforming to the same overall guidelines." (Bogost, 2008).
+
+This clearly states that - obviously -  internet, like any other built-spaces, is not neutral. It states that internet embody specific values, behaviours, ideas - and that these ideas are deployed by code (which is part of internert's materiality). Internet is consequently an ecosystem of proceduralities "modeling the way things behave"(Bogost, 2008); setting guidelines for how *things* shoud behave through algorithms, protocols and others.
+
+Although this is clear with Algorithms regulating, impacting and curating the way we perceive things in internet, Protocols' proceduralities is, in my sense, less obvious. 
+
+However, Protocols do have a concrete impact on our interactions and on language; and this is obvious after the all debate regarding the so-called [Net Neutrality](https://en.wikipedia.org/wiki/Net_neutrality).
+
+
+
