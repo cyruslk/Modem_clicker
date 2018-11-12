@@ -20,9 +20,9 @@ In the [Master's Thesis Draft](https://docs.google.com/document/d/1Wq8xWYlTZ7X-d
 
 -  "On the one hand, the internet appears as an immediate system of data transmission, characterized by a perfect data flow. On the other hand, **internet is punctuated by delays, failures and other frequent protocol anomalies**."
 
-TO COME : 
+TO COME :
 
-- [x] Protocols? 
+- [x] Protocols?
 - [x] Internet's materiality vs ISP's marketing strategies?
 - [x] Reveal/Explore internet's Materiality? Why?
 - [ ] Protocols: embeded values on language?
@@ -46,7 +46,7 @@ This fact that internet is a messy, physical, odd, weird, delayed, irregular (an
 
 ------
 
-- [x] Protocols? 
+- [x] Protocols?
 
 The first one is [Protocol: How Control Exists after Decentralization](https://mitpress.mit.edu/books/protocol) by Alexander Galloway. I detailed the intersections between Galloway's book and my researches in [these logs](https://github.com/cyruslk/MODEMGUESSINGGAME/blob/master/logs.md) so I won't go back to the core ideas of the book; except that, to make it simple, even if Internet's infrastructure is distributed, there is a whole embeded system of **control and structure** in it; and **it resides largly in internet's transmitting protocols**.
 
@@ -56,7 +56,7 @@ There's a lot of [research being made these days](https://socialmediacollective.
 
 ------
 
-The other one is [The Undersea Network](https://www.dukeupress.edu/the-undersea-network) by Nicole Starosielski.In her book, Starosielski investigates internet's physical infrastructure by exploring the role, the characteristics and the specificities of its [undersea cables](https://theconversation.com/in-our-wi-fi-world-the-internet-still-depends-on-undersea-cables-49936). 
+The other one is [The Undersea Network](https://www.dukeupress.edu/the-undersea-network) by Nicole Starosielski.In her book, Starosielski investigates internet's physical infrastructure by exploring the role, the characteristics and the specificities of its [undersea cables](https://theconversation.com/in-our-wi-fi-world-the-internet-still-depends-on-undersea-cables-49936).
 
 At the begining of the book, Starosielski clearly states that these cables "**transport 99 percent of all transoceanic digital communications**, including phone calls, text and e-mail messages, websites, digital images and video, and even some television (...). It is submarine systems, rather than satellites, that carry most of the Internet across the oceans." (Starosielski, 2015)
 
@@ -78,7 +78,7 @@ I took some time to build and reflect on my last bot, the [slow sender meme bot]
 
 - [x] Reveal/Explore internet's Materiality? Why?
 
-- CONTEXT : From this excerpt of Starosielski's book, ISP (and other private agents providing access internet) are striving to label internet as **a black-box**. 
+- CONTEXT : From this excerpt of Starosielski's book, ISP (and other private agents providing access internet) are striving to label internet as **a black-box**.
 
   A black-box is defined by **its opaque** characteristics. When we talk about a blak-box, we usually don't know the box itself: we know the inputs (the data passed in) and the outputs (the data *returned*) of this box without any knowledge of its internal workings.
 
@@ -90,11 +90,11 @@ I took some time to build and reflect on my last bot, the [slow sender meme bot]
 
 - CONTEXT : To draw on Golloway's Protocols, these components are where internet's system of control and structure reside. It's because these components are crafted these ways/enable these affordances and these possibilities that ISP and other agents are able to [monitor, listen and store our data,](https://www.theguardian.com/commentisfree/2018/mar/28/all-the-data-facebook-google-has-on-you-privacy) change the ([spatio](https://en.wikipedia.org/wiki/IP_address_blocking)/[temporal](https://en.wikipedia.org/wiki/Bandwidth_throttling)) characteristics of the network and so on and so on.
 
-- STATEMENT : Consequently, exploring (or questioning, revealing, breaking) the way internet (through its materiality) operate is in my sense a very political and subersive act. 
+- STATEMENT : Consequently, exploring (or questioning, revealing, breaking) the way internet (through its materiality) operate is in my sense a very political and subersive act.
 
   ------
 
-  These thoughts are related to what [Experimental Jetset](https://www.experimentaljetset.nl/) expressed in their [Statement and Counter-Statement](https://www.experimentaljetset.nl/250/) book/index of interviews. I came across these thoughts three years ago and they still have an important impact on my approach of design. 
+  These thoughts are related to what [Experimental Jetset](https://www.experimentaljetset.nl/) expressed in their [Statement and Counter-Statement](https://www.experimentaljetset.nl/250/) book/index of interviews. I came across these thoughts three years ago and they still have an important impact on my approach of design.
 
   **Debord, Guy**
 
@@ -102,8 +102,8 @@ I took some time to build and reflect on my last bot, the [slow sender meme bot]
   Althought this was just a short period, the impact of this book is still showing in our work. In *The Society of the Spectacle*, Debord critically describes a society dominated by images and representations, and the alientation caused by this.
   We really agreed with this critique, and were thinking of ways to intrgrate it into our design work.
 
-  We translated Debord's theory in a quite literal (and maybe slightly naive) way: we tried to design in a "non-representative" manner. **In other words, we wanted to design objects that would function not as images, but as material objects. Objects that would point to the physical world, the material base that was hidden underneath the world of images.** 
-  To give an example of this: we decided to never use photography in our work, as we believed that photography (especially full-color photogaphy) would imprison the viewer in an illusion, in a false representation of reality. For instance, when designing a poster, we would use typography only, so that the poster would be recognizable as just a printed piece of paper, not as an image. That also explains the use of white/empty space in our work: we want the viewer to use the paper itself, to cut through the world of images, and see the material base behind it. **By constantly referring to the material base behind everything, we want to make the viewer aware that this world is a makeable world, a world that is made by humans (and thus also has the potential to be changed by humans).** 
+  We translated Debord's theory in a quite literal (and maybe slightly naive) way: we tried to design in a "non-representative" manner. **In other words, we wanted to design objects that would function not as images, but as material objects. Objects that would point to the physical world, the material base that was hidden underneath the world of images.**
+  To give an example of this: we decided to never use photography in our work, as we believed that photography (especially full-color photogaphy) would imprison the viewer in an illusion, in a false representation of reality. For instance, when designing a poster, we would use typography only, so that the poster would be recognizable as just a printed piece of paper, not as an image. That also explains the use of white/empty space in our work: we want the viewer to use the paper itself, to cut through the world of images, and see the material base behind it. **By constantly referring to the material base behind everything, we want to make the viewer aware that this world is a makeable world, a world that is made by humans (and thus also has the potential to be changed by humans).**
 
   Nowadays, our views are a little less dogmatic. For an example, we new use photography in our work, occasionally.**But we're still very interested in the concept of design that refers to the material base: design that refers to itself, or to its own context."**
 
@@ -114,7 +114,7 @@ I took some time to build and reflect on my last bot, the [slow sender meme bot]
 
 I would also like to show here a serie of images/projects that had an impact on my thoughts and initiated in a way these modems projects and bots. I'll drop them here and explain how they relate to my researches.
 
-- DISRUPTING THE FLOW 
+- DISRUPTING THE FLOW
 
 
 ![alt text](https://66.media.tumblr.com/71a52c9b3787764fe53763f5dcdef63a/tumblr_o4zdxwrgGf1qixa76o1_640.png)
@@ -131,7 +131,7 @@ This image comes from [this project](http://theartofgooglebooks.tumblr.com/). It
 
 This image comes from [this project](http://9-eyes.com/). It's basically a guy throwing a bottle of coca-cola to the [Google Street View](https://www.google.com/streetview/understand/) car. This is also interesting because it shows the failure behind the "semingless" attempt: it shows the incident that goes against the appearance Google is communicating and - again - disrupt a smooth characteristics of the initiative.
 
-- FROM MAPS TO TERRITORIES (...AND TRAJECTORIES) 
+- FROM MAPS TO TERRITORIES (...AND TRAJECTORIES)
 
 
 ![alt text](https://66.media.tumblr.com/1c84b053564a6ff3cb2b78df3b3f2dfe/tumblr_o7708fSaqV1qixa76o1_1280.png)
@@ -156,7 +156,7 @@ This image is a portrait of me by my grandma. It had been made in the context of
 
 # 2018-11-08 | 20:01
 
-Started to work on the server side of the project. The main file of the server side is `server.js`. I'll work with `express` in order to manage the route between the server and the client (made using [React.js](https://reactjs.org/)). 
+Started to work on the server side of the project. The main file of the server side is `server.js`. I'll work with `express` in order to manage the route between the server and the client (made using [React.js](https://reactjs.org/)).
 
 I'm also install socket.io both on the server and the client (React.js). ["Socket.IO is a library that enables real-time, bidirectional and event-based communication between the browser and the server."](https://socket.io/docs/)
 
@@ -187,7 +187,7 @@ For now, the client side is able to send/receive data coming from the server. He
 
 ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Capture%20d%E2%80%99%C3%A9cran%202018-11-09%20%C3%A0%2012.14.45.png)
 
-This idea is now to implement `sockets` in order to send data in real time without having to refresh the client page. 
+This idea is now to implement `sockets` in order to send data in real time without having to refresh the client page.
 
 EDIT 1: I now have a script that displays the mouse coordinates. The idea is to pass these coordinates to the server now.
 
@@ -245,7 +245,7 @@ Here is a screenshot of my browser's console. The first set of coordinates are c
 
 
 
-# 2018-11-10 | 00:37
+# 2018-11-10 | 10:37
 
 ![alt text](http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1541828495/dscs_w6pzdh.jpg)
 
