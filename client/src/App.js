@@ -67,7 +67,7 @@ class App extends React.Component{
                 {this.state.x}, {this.state.y}
                 </div>
                 <div>
-                {this.state.xx}, {this.state.yy}
+                  {this.state.xx}, {this.state.yy}
                 </div>
             </div>
         );
