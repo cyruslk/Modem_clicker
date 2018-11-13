@@ -284,3 +284,19 @@ This clearly states that - obviously -  internet, like any other built-spaces, i
 Although this is clear with Algorithms regulating, impacting and curating the way we perceive things in internet, Protocols' proceduralities are, in my sense, less obvious. 
 
 However, Protocols do have a concrete impact on our interactions and on language; and this is obvious after the all debate regarding the so-called [Net Neutrality](https://en.wikipedia.org/wiki/Net_neutrality).
+
+
+
+# 2018-11-09 | 18:57
+
+
+As a manifesto's draft:
+
+- Both analog and digital
+- Both delayed and immediate
+- Inserting in the network, disrupting the network
+- Protocol failures, protocol failure
+- Against flow
+- Both new and old
+- slow sender, slow protocol
+- embodying the cloud; from the cloud to the ground
