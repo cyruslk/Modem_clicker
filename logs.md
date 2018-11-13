@@ -299,4 +299,26 @@ As a manifesto's draft:
 - Against flow
 - Both new and old
 - slow sender, slow protocol
-- embodying the cloud; from the cloud to the ground
+- embodying the cloud; from the cloud to the ground; from the cloud to the infrastructure
+
+------
+
+This is the pseudo code of what I'm trying to do:
+
+      io.on('connection', (socket) => {
+        socket.on('SEND_COORDINATES', function(data){
+        
+        // Here, send the data to the minomodem transmitter.
+      	// Once, the data is outputted to sounds: 
+      	// 1- use a minimodem receiver to decrypt back the sounds to text
+     	// 2 - Then emit to the client to the new data
+     	
+        io.emit('RECEIVE_COORDINATES', data);
+        })  
+    });
+However, when I'm now running a simple `minimodem` command in the terminal, I'm facing this issue:
+
+```
+E: Cannot create PulseAudio stream: Connection refused
+```
+
