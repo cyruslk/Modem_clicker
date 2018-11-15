@@ -322,3 +322,25 @@ However, when I'm now running a simple `minimodem` command in the terminal, I'm 
 E: Cannot create PulseAudio stream: Connection refused
 ```
 
+
+
+# 2018-11-14 | 17:40
+
+
+This issue is related to the OS version of the mac I'm using. I was able to try running a simple `minimodem --tx 100 Hello World!` command on a mac running with macOS Sierra and it worked. I'm now using CDA's laptops, the ones I use for my [2XTWEETSXMODEMSXTEXTXTWEET](http://2xtweetsxmodemsxtextxtweet.c-t-l-k.com/) project. These macs run with macOS Sierra as well. I will investigate what's happening with High Sierra later (didn't want to installed Mojave for now).
+
+
+Anyway, I now replaced my pseudo-code with (regular?) code and it looks like this:
+
+      io.on('connection', (socket) => {
+        socket.on('SEND_COORDINATES', function(data){
+        
+          const dataToString = `${data.x.toString()}, ${data.x.toString()}`;
+          var baudRate = "60"
+          var child = spawn("minimodem", ["-t", `${baudRate}`]);
+          child.stdin.write(dataToString);
+    
+      	  io.emit('RECEIVE_COORDINATES', data);
+    
+    	})
+    });

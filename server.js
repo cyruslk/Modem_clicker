@@ -23,12 +23,7 @@ io.on('connection', (socket) => {
       child.stdin.write(dataToString);
       console.log(dataToString, "----–––");
 
-      // Here, send the data to the minomodem transmitter.
-
-      // Once, the data is outputted to sounds, use a minimodem receive to decrypt back the sounds > text
-      // Then emit to the client to the new data.
-
-        io.emit('RECEIVE_COORDINATES', data);
+      io.emit('RECEIVE_COORDINATES', data);
 
     })
 });
