@@ -344,3 +344,28 @@ Anyway, I now replaced my pseudo-code with (regular?) code and it looks like thi
     
     	})
     });
+
+
+# 2018-11-15 | 10:28
+
+
+Going back to the manifesto's draft:
+
+- Create a **data circuit** that is both analog and digital
+- Disrupt digital data by analog one; Disrupt analog data by digital one.
+- From signals to noise; From noise to signals
+- **Protocol chaining: both with analog and digital components**
+- Embody the trajectories of data in space
+- Disrupt the data circuit by *screeching* modems
+- Break the circuit by itself
+
+------
+
+For now, this is the procedurally of the App:
+
+1. The user moves its cursor through the page
+2. The cursor's positions (coordinates) are monitored in the client side of the app, displayed in the webpage and sent to the server. 
+
+
+
+1. Coming from the client is passed to the server and piped to the terminal   (through the [child_process](https://nodejs.org/api/child_process.html) built-in module)
