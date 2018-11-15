@@ -346,6 +346,21 @@ Anyway, I now replaced my pseudo-code with (regular?) code and it looks like thi
     });
 
 
+Here, the coordinates coming from the client in an object form are first conversted to strings.
+
+```
+ const dataToString = `${data.x.toString()}, ${data.x.toString()}`;
+```
+
+Once this step is done, they are sent to the terminal embedded in the minimodem command:
+
+```
+var child = spawn("minimodem", ["-t", `${baudRate}`]);
+child.stdin.write(dataToString);
+```
+
+
+
 # 2018-11-15 | 10:28
 
 
@@ -361,7 +376,7 @@ Going back to the manifesto's draft:
 
 ------
 
-For now, this is the procedurally of the App:
+- **THE ACTUAL PROCEDURALITY OF THE PROJECT:**
 
 1. The user moves its cursor through the page
 
@@ -372,3 +387,47 @@ For now, this is the procedurally of the App:
 
 3. The same coordinates are sent to the server side (`server.js`) using  `sockets`. And, for now, as soon as they are areceived  in the server side, they're sent back to the client side using `sockets` again.
 
+
+
+   ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Screen%20Shot%202018-11-15%20at%2011.03.40%20AM.png)
+
+
+- **MY INTENTIONS BEHIND THE PROJECT:**
+
+This project is, for now, called Modem_Interface for a reason. The idea is the following: I would like to embed in internet's flow of interactions (between pages,  between user's inputs through the GUI) modems signals. In other words, I would like to insert into the *silent and cloudy* ideological circuit of internet analog and error-prone signals. 
+
+Initially, I developed two ideas in [this Google Doc](https://docs.google.com/document/d/1bUBO-7GQUZtH3D_C8OnMTckYUf8Rwwf_sxK29K3sMF0/edit?usp=sharing) I wanted to push further:
+
+1. **Drawing on Idea #9:**  "The modem affordances are used to perform actions on the internet. You browse on the internet through the slow rhythm of modems (goes back to net neutrality?)." 
+
+   This was still very vague but it's what I'm investigating here through coordinates. 
+
+   - Through this *trajectoire* of coordinates, my goal is to insert in the server-side a modem transmission mode of this data. 
+
+     *This is in pseudo-code what I want to achieve here:*      
+
+           io.on('connection', (socket) => {
+            	  socket.on('SEND_COORDINATES', function(data){
+             
+               const dataToString = `${data.x.toString()}, ${data.x.toString()}`;
+               var baudRate = "60"
+               var child = spawn("minimodem", ["-t", `${baudRate}`]);
+               child.stdin.write(dataToString);
+               
+               // Now that the coordinates are outputted in modem signals
+               // Run the receiver mode of minimodem in order to decrypt these signals
+               
+               // Once the signals are decrypted from modems to texts (coordinates):
+               // Emit them back to the client
+         
+               io.emit('RECEIVE_COORDINATES', data);
+         
+         	})
+         });
+
+   - Because this process of decrypting data from modems > coordinates (and coordinates > modems) will be delayed and error-prone, what will be sent to the client will no longer be equal to what was originally sent to the server.
+
+   - This inaccurate data will be used to position the cursor on the page. In other words, the user will experience a delay between the first coordinates he inputed and these ones.
+     - [ ] Finalise the process so that the user's coordinates are determined by the data coming from the server
+
+2. **Drawing on idea #11:** 
