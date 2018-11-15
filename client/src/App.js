@@ -26,6 +26,7 @@ class App extends React.Component{
               xx: data.x,
               yy: data.y
             })
+            console.log(document.documentElement.scrollTop, "this here");
         });
 
 
@@ -42,6 +43,7 @@ class App extends React.Component{
     componentDidMount() {
       this.updateWindowDimensions();
       window.addEventListener('resize', this.updateWindowDimensions);
+      return document.body.style.cursor = "none";
     }
 
     componentWillUnmount() {
@@ -63,6 +65,9 @@ class App extends React.Component{
     render(){
         return (
             <div className="container" onMouseMove={this._onMouseMove}>
+
+                <img className="cursor" src="https://bit.ly/2QJEezD" />
+                
                 <div>
                 {this.state.x}, {this.state.y}
                 </div>

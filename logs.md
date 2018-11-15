@@ -430,7 +430,34 @@ Initially, I developed two ideas in [this Google Doc](https://docs.google.com/do
    - This inaccurate data will be used to position the cursor on the page. In other words, the user will experience a delay between the first coordinates he inputed and these ones.
      - [ ] Finalise the process so that the user's coordinates are determined by the data coming from the server
 
-2. **Drawing on idea #11:** "Every time a user access an hyperlink, it fetches the content of the page (related to the hyperlink), a) it transmits the content by modem signals; b) a modem receiver decrypt these modems signals back to source code; and c) the newly generated code is opened in the browser."
+2. **Drawing on idea #11:** "Every time a user access an hyperlink, it fetches the content of the page (related to the hyperlink), a) it transmits the content by modem signals; b) a modem receiver decrypt these modems signals back to source code; and c) the newly generated code is opened in the browser." ...I'll go back to this later.
 
-   I'll go back to this later
+
+
+# 2018-11-15 | 15:12
+
+Going back to the code for now:
+
+I realised that (obviously), it's quite hard to manipulate in real time the cursor position. I came acrocss this [stack overflow thread](https://stackoverflow.com/questions/4752501/move-the-mouse-pointer-to-a-specific-position) and it's, in fact, missing to the JavaScript API. **It's also because the mouse element is not belonging to the browser but by the Platform's system.** While someone is suggesting to run a quick [`c` script](http://hints.macworld.com/article.php?story=2008051406323031) in the backend, another idea is to remove the clicker, replace it by a *false* image of a clicker and handle clickevents [like this](http://jsfiddle.net/jaakkytt/9uczV/). Another idea would be to use mouse-lock to lock the cursor to specific coordinates that relates to the data coming from the server (and piped into `minimodem`). 
+
+------
+
+First, I'm going to remove the cursor style in the Client App:
+
+```
+  componentDidMount() {
+      this.updateWindowDimensions();
+      window.addEventListener('resize', this.updateWindowDimensions);
+      return document.body.style.cursor = "none";
+    }
+```
+
+Now, I will find, add, and anmimate the fake cursor:
+
+- Found [this cursor image.](https://bit.ly/2QJEezD)
+
+- Added it in the `render()` section of the App.js file.
+
+- Added a `position:absolute`  and a `width: 20px;`. For now, the fake cursor *is stuck* at the middle of the page. 
+
 

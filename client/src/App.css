@@ -14,3 +14,8 @@
   color: white;
   font-size: 21vw;
 }
+
+.cursor{
+  position: absolute;
+  width: 20px;
+}
