@@ -364,8 +364,11 @@ Going back to the manifesto's draft:
 For now, this is the procedurally of the App:
 
 1. The user moves its cursor through the page
+
 2. The cursor's positions (coordinates) are monitored in the client side of the app, displayed in the webpage and sent to the server. 
 
 
+   ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Screen%20Shot%202018-11-15%20at%2010.47.46%20AM.png) 
 
-1. Coming from the client is passed to the server and piped to the terminal   (through the [child_process](https://nodejs.org/api/child_process.html) built-in module)
+3. The same coordinates are sent to the server side (`server.js`) using  `sockets`. And, for now, as soon as they are areceived  in the server side, they're sent back to the client side using `sockets` again.
+
