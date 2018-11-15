@@ -430,4 +430,7 @@ Initially, I developed two ideas in [this Google Doc](https://docs.google.com/do
    - This inaccurate data will be used to position the cursor on the page. In other words, the user will experience a delay between the first coordinates he inputed and these ones.
      - [ ] Finalise the process so that the user's coordinates are determined by the data coming from the server
 
-2. **Drawing on idea #11:** 
+2. **Drawing on idea #11:** "Every time a user access an hyperlink, it fetches the content of the page (related to the hyperlink), a) it transmits the content by modem signals; b) a modem receiver decrypt these modems signals back to source code; and c) the newly generated code is opened in the browser."
+
+   I'll go back to this later
+
