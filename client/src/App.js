@@ -11,8 +11,8 @@ class App extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            coordinates: 'hello world',
             width: 0,
+            hidder: true,
             height: 0,
             x: 0,
             y: 0,
@@ -64,22 +64,22 @@ class App extends React.Component{
 
     _onMouseMove(e) {
       this.setState({ x: e.screenX, y: e.screenY });
+
       this.sendCoordinates();
+
     }
 
     _onActive(e) {
       console.log('user is active', e);
-      alert("active")
       this.setState({
-        display: "block",
-
+        hidder: true,
       })
     }
 
     _onIdle(e) {
       console.log('user is idle', e);
       this.setState({
-          display: "none",
+        hidder: true,
       })
     }
 
@@ -93,27 +93,24 @@ class App extends React.Component{
           zIndex: 100000
       }
 
-      let display = {
-        display: "none"
-      }
 
+      if(this.state.hidder){
         return (
-
           <IdleTimer
-           ref={ref => { this.idleTimer = ref }}
-           element={document}
-           onActive={this.onActive}
-           onIdle={this.onIdle}
-           timeout={20000000}>
-
-            <div className="container" onMouseMove={this._onMouseMove}>
+             ref={ref => { this.idleTimer = ref }}
+             element={document}
+             onActive={this.onActive}
+             onIdle={this.onIdle}
+             timeout={1000}>
+          <div>
+          <div className="container"
+            onMouseMove={this._onMouseMove}>
 
                 <img className="cursor"
                 style={style_clicker}
                 src="https://bit.ly/2QJEezD" />
 
-
-                <div className="hide-cursor" style={display}></div>
+                <div className="hide-cursor"></div>
 
                 <Iframe url="https://en.wikipedia.org/wiki/MacOS"
                   style={{zIndex: 1}}
@@ -124,9 +121,72 @@ class App extends React.Component{
                   allowFullScreen/>
 
             </div>
-            </IdleTimer>
+          </div>
+          </IdleTimer>
+        )
+      }else{
+        return (
+          <IdleTimer
+             ref={ref => { this.idleTimer = ref }}
+             element={document}
+             onActive={this.onActive}
+             onIdle={this.onIdle}
+             timeout={1000}>
+             <div className="container"
+               onMouseMove={this._onMouseMove}>
 
-        );
+                   <img className="cursor"
+                   style={style_clicker}
+                   src="https://bit.ly/2QJEezD" />
+
+
+                   <Iframe url="https://en.wikipedia.org/wiki/MacOS"
+                     style={{zIndex: 1}}
+                     id="myId"
+                     className="myClassname"
+                     display="initial"
+                     position="relative"
+                     allowFullScreen/>
+
+               </div>
+          </IdleTimer>
+        )
+      }
+
+
+
+        // return (
+        //
+        //   <IdleTimer
+        //    ref={ref => { this.idleTimer = ref }}
+        //    element={document}
+        //    onActive={this.onActive}
+        //    onIdle={this.onIdle}
+        //    timeout={1000}>
+        //
+        //     <div className="container"
+        //     onMouseMove={this._onMouseMove}>
+        //
+        //         <img className="cursor"
+        //         style={style_clicker}
+        //         src="https://bit.ly/2QJEezD" />
+        //
+        //         <div className="hide-cursor" ></div>
+        //
+        //         <Iframe url="https://en.wikipedia.org/wiki/MacOS"
+        //           style={{zIndex: 1}}
+        //           id="myId"
+        //           className="myClassname"
+        //           display="initial"
+        //           position="relative"
+        //           allowFullScreen/>
+        //
+        //     </div>
+        //
+        //
+        //     </IdleTimer>
+        //
+        // );
     }
 }
 

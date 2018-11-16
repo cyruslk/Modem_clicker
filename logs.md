@@ -428,6 +428,7 @@ Initially, I developed two ideas in [this Google Doc](https://docs.google.com/do
    - Because this process of decrypting data from modems > coordinates (and coordinates > modems) will be delayed and error-prone, what will be sent to the client will no longer be equal to what was originally sent to the server.
 
    - This inaccurate data will be used to position the cursor on the page. In other words, the user will experience a delay between the first coordinates he inputed and these ones.
+
      - [ ] Finalise the process so that the user's coordinates are determined by the data coming from the server
 
 2. **Drawing on idea #11:** "Every time a user access an hyperlink, it fetches the content of the page (related to the hyperlink), a) it transmits the content by modem signals; b) a modem receiver decrypt these modems signals back to source code; and c) the newly generated code is opened in the browser." ...I'll go back to this later.
@@ -476,3 +477,59 @@ EDIT 2: Found a [CSS hack](http://jsfiddle.net/dyV7L/). However, this basically 
 
 EDIT 3: HOWEVER, I have an idea: I could just remove the cursor (and lock the iframe) when the user move. 
 This will, in turn, allow the user to click on hyperlinks and scroll, assuming that you don't scroll (or click) when you move the cursor.
+
+# 2018-11-16 | 11:49
+
+On the technical side, what need to be fixed:
+
+- On the server side
+- [ ] Launch two child processes at the same time.
+- [ ] When  var child = spawn("minimodem", ["-r", `${baudRate}`]); launches, pipes it back to the console.
+- On the client 
+- [ ] As soon as the user scrolls, it changes the hide-cursor div to `display:none` and release the iframe.
+- [ ] Do I really need sockets?
+
+------
+
+BUT BEFORE: MINIMODEM IS QUITE UNSTABLE, DUE TO THIS ERROR:
+
+```
+E: Cannot create PulseAudio stream: Connection terminated
+```
+
+SINCE ITS THE CORE COMPONENT OF MY PROJECT, I NEED TO FIND A WAY TO FIX THIS OR FIND AN ALTERNATIVE. FOR NOW, I RE-INSTALLED BREW, TRIED TO UPGRADE MINIMODEM. I'LL TRY TO RE-INSTALL PULSEAUDIO AND MINIMODEM NOW.
+
+EDIT 1: I INSTALLED FIRST PULSEAUDIO, THEN MINIMODEM.
+
+```
+==> **Installing dependencies for minimodem:** **isl****,** **gcc** **and** **fftw**
+==> **Installing minimodem dependency:** **isl**
+==> **Downloading https://homebrew.bintray.com/bottles/isl-0.20.sierra.bottle.tar.gz**
+\######################################################################## 100.0%
+==> **Pouring isl-0.20.sierra.bottle.tar.gz**
+🍺  /usr/local/Cellar/isl/0.20: 71 files, 3.9MB
+==> **Installing minimodem dependency:** **gcc**
+==> **Downloading https://homebrew.bintray.com/bottles/gcc-8.2.0.sierra.bottle.1.tar.gz**
+\######################################################################## 100.0%
+==> **Pouring gcc-8.2.0.sierra.bottle.1.tar.gz**
+🍺  /usr/local/Cellar/gcc/8.2.0: 1,494 files, 343.6MB
+==> **Installing minimodem dependency:** **fftw**
+==> **Downloading https://homebrew.bintray.com/bottles/fftw-3.3.8.sierra.bottle.tar.gz**
+\######################################################################## 100.0%
+==> **Pouring fftw-3.3.8.sierra.bottle.tar.gz**
+🍺  /usr/local/Cellar/fftw/3.3.8: 52 files, 10.7MB
+==> **Installing** **minimodem**
+==> **Downloading https://homebrew.bintray.com/bottles/minimodem-0.24.sierra.bottle.tar.gz**
+\######################################################################## 100.0%
+==> **Pouring minimodem-0.24.sierra.bottle.tar.gz**
+🍺  /usr/local/Cellar/minimodem/0.24: 8 files, 86.5KB
+```
+
+(These are the logs from [Homebrew](https://brew.sh/) installing minimodem.)
+
+EDIT 2: I'M NOW REBOOTING THE LAPTOP.
+
+EDIT 3: Seems to work now...Let see how it goes.
+
+# 2018-11-16 | 11:49
+
