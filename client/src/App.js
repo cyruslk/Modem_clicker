@@ -72,14 +72,14 @@ class App extends React.Component{
     _onActive(e) {
       console.log('user is active', e);
       this.setState({
-        hidder: true,
+        hidder: false,
       })
     }
 
     _onIdle(e) {
       console.log('user is idle', e);
       this.setState({
-        hidder: true,
+        hidder: false,
       })
     }
 
@@ -110,7 +110,7 @@ class App extends React.Component{
                 style={style_clicker}
                 src="https://bit.ly/2QJEezD" />
 
-                <div className="hide-cursor"></div>
+                <div className="hide-cursor" style={{display: "block"}}></div>
 
                 <Iframe url="https://en.wikipedia.org"
                   style={{zIndex: 1}}
@@ -140,6 +140,10 @@ class App extends React.Component{
                    src="https://bit.ly/2QJEezD" />
 
 
+                   <div className="hide-cursor" style={{display: "none"}}></div>
+
+
+
                    <Iframe url="https://en.wikipedia.org"
                      style={{zIndex: 1}}
                      id="myId"
@@ -152,41 +156,6 @@ class App extends React.Component{
           </IdleTimer>
         )
       }
-
-
-
-        // return (
-        //
-        //   <IdleTimer
-        //    ref={ref => { this.idleTimer = ref }}
-        //    element={document}
-        //    onActive={this.onActive}
-        //    onIdle={this.onIdle}
-        //    timeout={1000}>
-        //
-        //     <div className="container"
-        //     onMouseMove={this._onMouseMove}>
-        //
-        //         <img className="cursor"
-        //         style={style_clicker}
-        //         src="https://bit.ly/2QJEezD" />
-        //
-        //         <div className="hide-cursor" ></div>
-        //
-        //         <Iframe url="https://en.wikipedia.org/wiki/MacOS"
-        //           style={{zIndex: 1}}
-        //           id="myId"
-        //           className="myClassname"
-        //           display="initial"
-        //           position="relative"
-        //           allowFullScreen/>
-        //
-        //     </div>
-        //
-        //
-        //     </IdleTimer>
-        //
-        // );
     }
 }
 

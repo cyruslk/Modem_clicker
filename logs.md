@@ -536,5 +536,27 @@ EDIT 3: Seems to work now...Let see how it goes.
 ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Screen%20Shot%202018-11-16%20at%202.04.08%20PM.png) 
 
 
-
 This is what the design look like for now. It's an iframe of Wikipedia with the fake cursor on it. Every time the user moves the cursor, minimodem fires. However, for now the analog circuit I aim to create is not yet completed, because the signals are not decrypted and sent back to the client.
+
+------
+
+For now, I'm still working on this front-end hack I talked earlier - and I'm still not able to remove the div on top of the user when the user is inactive. Here's what I'm trying to achieve:
+
+1. Using [`react-idle-timer`](https://www.npmjs.com/package/react-idle-timer), I'm listening to the user's events. 
+
+2. When the user is inactive after 1000 Milliseconds, I'm removing the div from the DOM
+
+3. Whe the user is active, I'm adding back the div in the DOM.
+
+         _onActive(e) {
+             console.log('user is active', e);
+             this.setState({
+               showDiv: true
+             })
+         }
+            _onIdle(e) {
+             console.log('user is idle', e);
+             this.setState({
+               showDiv: false
+             })
+           }
