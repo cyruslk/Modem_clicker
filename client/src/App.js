@@ -1,5 +1,9 @@
 import React from "react";
 import io from "socket.io-client";
+import Iframe from 'react-iframe';
+import IdleTimer from 'react-idle-timer'
+
+
 import './App.css';
 
 
@@ -18,6 +22,9 @@ class App extends React.Component{
 
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
         this._onMouseMove = this._onMouseMove.bind(this);
+        this.idleTimer = null
+        this.onActive = this._onActive.bind(this);
+        this.onIdle = this._onIdle.bind(this);
 
 
         this.socket = io('localhost:5000');
@@ -26,7 +33,6 @@ class App extends React.Component{
               xx: data.x,
               yy: data.y
             })
-            console.log(document.documentElement.scrollTop, "this here");
         });
 
 
@@ -61,20 +67,65 @@ class App extends React.Component{
       this.sendCoordinates();
     }
 
+    _onActive(e) {
+      console.log('user is active', e);
+      alert("active")
+      this.setState({
+        display: "block",
+
+      })
+    }
+
+    _onIdle(e) {
+      console.log('user is idle', e);
+      this.setState({
+          display: "none",
+      })
+    }
+
 
     render(){
+
+      let style_clicker = {
+          position: "absolute",
+          left: this.state.xx,
+          top:this.state.yy,
+          zIndex: 100000
+      }
+
+      let display = {
+        display: "none"
+      }
+
         return (
+
+          <IdleTimer
+           ref={ref => { this.idleTimer = ref }}
+           element={document}
+           onActive={this.onActive}
+           onIdle={this.onIdle}
+           timeout={20000000}>
+
             <div className="container" onMouseMove={this._onMouseMove}>
 
-                <img className="cursor" src="https://bit.ly/2QJEezD" />
-                
-                <div>
-                {this.state.x}, {this.state.y}
-                </div>
-                <div>
-                  {this.state.xx}, {this.state.yy}
-                </div>
+                <img className="cursor"
+                style={style_clicker}
+                src="https://bit.ly/2QJEezD" />
+
+
+                <div className="hide-cursor" style={display}></div>
+
+                <Iframe url="https://en.wikipedia.org/wiki/MacOS"
+                  style={{zIndex: 1}}
+                  id="myId"
+                  className="myClassname"
+                  display="initial"
+                  position="relative"
+                  allowFullScreen/>
+
             </div>
+            </IdleTimer>
+
         );
     }
 }

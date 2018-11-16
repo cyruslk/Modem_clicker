@@ -442,7 +442,7 @@ I realised that (obviously), it's quite hard to manipulate in real time the curs
 
 ------
 
-First, I'm going to remove the cursor style in the Client App:
+**First, I'm going to remove the cursor style in the Client App:**
 
 ```
   componentDidMount() {
@@ -452,12 +452,27 @@ First, I'm going to remove the cursor style in the Client App:
     }
 ```
 
-Now, I will find, add, and anmimate the fake cursor:
+**Now, I will find, add, and anmimate the fake cursor:**
 
-- Found [this cursor image.](https://bit.ly/2QJEezD)
+1. Found [this cursor image.](https://bit.ly/2QJEezD)
 
-- Added it in the `render()` section of the App.js file.
+2. Added it in the `render()` section of the App.js file.
 
-- Added a `position:absolute`  and a `width: 20px;`. For now, the fake cursor *is stuck* at the middle of the page. 
+3. Added a `position:absolute`  and a `width: 20px;`. For now, the fake cursor *is stuck* at the middle of the page. 
 
 
+   ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Screen%20Shot%202018-11-15%20at%204.23.36%20PM.png)
+
+4. Done! The *fake* cursor is now following the coordinates coming from the server. In order to do this, I added a dynamic `style` element in the image tag, in order to change its position based on the data received from the server and stored in the [state](https://reactjs.org/docs/state-and-lifecycle.html). If I stop the server, the mouse freezes. 
+
+   The interaction is already a bit glitchy and I love it!
+
+**Now, I'll add an iframe and figure out how to handle clicks:**
+
+
+EDIT 1: Alright :(  - So I added a full width/height iframe and I changed the `z-index` of my cursor image to be displayed on top of the iframe but I ran into a problem: [I won't be able to hide the cursor on a iframe because of CORS.](https://stackoverflow.com/questions/20102248/hiding-the-users-cursor-over-iframe-possible)
+
+EDIT 2: Found a [CSS hack](http://jsfiddle.net/dyV7L/). However, this basically just adds a div on top of the iframe. So it doesn't allows me to click on the links of the `iframe`, neither scroll it.
+
+EDIT 3: HOWEVER, I have an idea: I could just remove the cursor (and lock the iframe) when the user move. 
+This will, in turn, allow the user to click on hyperlinks and scroll, assuming that you don't scroll (or click) when you move the cursor.
