@@ -533,7 +533,8 @@ EDIT 3: Seems to work now...Let see how it goes.
 
 # 2018-11-16 | 13:58
 
-![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Screen%20Shot%202018-11-16%20at%201.50.12%20PM.png) 
+![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Screen%20Shot%202018-11-16%20at%202.04.08%20PM.png) 
 
 
-This is what the design look like for now. It's an iframe of the Wikipedia page 
+
+This is what the design look like for now. It's an iframe of Wikipedia with the fake cursor on it. Every time the user moves the cursor, minimodem fires. However, for now the analog circuit I aim to create is not yet completed, because the signals are not decrypted and sent back to the client.
