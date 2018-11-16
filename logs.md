@@ -560,3 +560,23 @@ For now, I'm still working on this front-end hack I talked earlier - and I'm sti
                showDiv: false
              })
            }
+
+    ​	
+
+# 2018-11-16 | 16:05
+
+Logs post meeting with Pippin.
+
+As an alternative to minimodem, we came acoss an interesting idea: using a TTS module in order to output in real time the user's coordinates in binary codes. The idea would be the following: use a *speech to text* module (maybe [this Watson package](https://www.ibm.com/watson/services/speech-to-text/)) in order to convert back the sonified binary codes to their digital form; and back the binary codes to coordinates. 
+
+Even if I'm still working with modems (and makes a lot of sense because its such an iconic sound of early internet), I'ld like to try this idea.
+
+Also wanted to add here a list of keywords that came up during our meeting:
+
+- Uncanny
+
+- Satisfying 
+
+- Fun
+
+- Minimodem (obviously)
