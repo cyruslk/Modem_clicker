@@ -531,5 +531,9 @@ EDIT 2: I'M NOW REBOOTING THE LAPTOP.
 
 EDIT 3: Seems to work now...Let see how it goes.
 
-# 2018-11-16 | 11:49
+# 2018-11-16 | 13:58
 
+![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Screen%20Shot%202018-11-16%20at%201.50.12%20PM.png) 
+
+
+This is what the design look like for now. It's an iframe of the Wikipedia page 

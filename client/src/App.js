@@ -112,7 +112,7 @@ class App extends React.Component{
 
                 <div className="hide-cursor"></div>
 
-                <Iframe url="https://en.wikipedia.org/wiki/MacOS"
+                <Iframe url="https://en.wikipedia.org"
                   style={{zIndex: 1}}
                   id="myId"
                   className="myClassname"
@@ -140,7 +140,7 @@ class App extends React.Component{
                    src="https://bit.ly/2QJEezD" />
 
 
-                   <Iframe url="https://en.wikipedia.org/wiki/MacOS"
+                   <Iframe url="https://en.wikipedia.org"
                      style={{zIndex: 1}}
                      id="myId"
                      className="myClassname"
