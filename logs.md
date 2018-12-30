@@ -565,18 +565,25 @@ For now, I'm still working on this front-end hack I talked earlier - and I'm sti
 
 # 2018-11-16 | 16:05
 
-Logs post meeting with Pippin.
+Meeting with Pippin.
 
-As an alternative to minimodem, we came acoss an interesting idea: using a TTS module in order to output in real time the user's coordinates in binary codes. The idea would be the following: use a *speech to text* module (maybe [this Watson package](https://www.ibm.com/watson/services/speech-to-text/)) in order to convert back the sonified binary codes to their digital form; and back the binary codes to coordinates. 
+As an alternative to minimodem, we came acoss an interesting idea: using a TTS module in order to output (Speak! Shout!) in real time the user's coordinates in binary codes. The idea would be the following: a) use a text to speech module to sonify these coordinates to binary codes; then b) use a *speech to text* module (maybe [this Watson package](https://www.ibm.com/watson/services/speech-to-text/)) to convert back the sonified binary codes to their digital form; and c) send back the binary codes to the client coordinates. 
 
-Even if I'm still working with modems (and makes a lot of sense because its such an iconic sound of early internet), I'ld like to try this idea.
+I like this idea.
 
-Also wanted to add here a list of keywords that came up during our meeting:
 
-- Uncanny
+# 2018-12-30 | 23:35
 
-- Satisfying 
+This CORS problem makes the project more complicated than it was intented. However, I came accross an option that seems interesting to explore: this `python` package: https://pypi.org/project/pynput/
 
-- Fun
+------
 
-- Minimodem (obviously)
+From their documation:
+
+```
+This library allows you to control and monitor input devices.
+
+Currently, mouse and keyboard input and monitoring are supported.
+```
+
+This could be a good alternative because it's not happening on the browser (at the opposite of this current  app that uses ` JavaScript`) but on the operating system. Maybe there's a similar package that runs with `node` and that would be great because I won't have to learn Python (I know very little for now but its on my learning list).

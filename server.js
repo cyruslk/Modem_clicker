@@ -19,9 +19,7 @@ io.on('connection', (socket) => {
       var baudRate = "60"
       var child = spawn("minimodem", ["-t", `${baudRate}`]);
       child.stdin.write(dataToString);
-
       console.log(data);
-
       io.emit('RECEIVE_COORDINATES', data);
 
     })
