@@ -587,3 +587,24 @@ Currently, mouse and keyboard input and monitoring are supported.
 ```
 
 This could be a good alternative because it's not happening on the browser (at the opposite of this current  app that uses ` JavaScript`) but on the operating system. Maybe there's a similar package that runs with `node` and that would be great because I won't have to learn Python (I know very little for now but its on my learning list).
+
+------
+
+EDIT: I found this awesome `npm module` that does the same features (keyboard & mouse input simulation...): http://robotjs.io/docs/examples
+
+I runed [the example script](http://robotjs.io/docs/syntax#mouse) they provided and since it's happening on the operarting system, there's no CORS issues and the cursor is behaving normally when hovering on webpages (turn to pointer when on hyperlinks etc).
+
+------
+
+Here is now the updated procedurality WITHOUT MINIMODEM:
+
+1. The client (still React.js) fires a mouse coordinate event to the server.
+
+2. The mouse icon of the client DOES NOT need to be hidden now
+
+3. The mouse coordinates is received on the server side and passed to the robojs API - exact piece of code: `robot.moveMouse(x, y);` .
+
+4. That's it I guess. As a result the mouse is looped from the client to the server and from the server back to the client.
+
+   EDIT: I'LL INVERSE THE COORDINATES COMING FROM THE BROWSER TO MAKE SURE THIS IS WORKING AS EXPECTED.
+
