@@ -281,7 +281,7 @@ In the context of these modems investigations entangled inside internet's networ
 
 This clearly states that - obviously -  internet, like any other built-spaces, is not neutral. It states that internet embody specific values, behaviours, ideas - and that these ideas are deployed by code (which is part of internert's materiality). Internet is consequently an ecosystem of proceduralities "modeling the way things behave"(Bogost, 2008); setting guidelines for how *things* shoud behave through algorithms, protocols and others.
 
-Although this is clear with Algorithms regulating, impacting and curating the way we perceive things in internet, Protocols' proceduralities are, in my sense, less obvious. 
+Although this is clear with Algorithms regulating, impacting and curating the way we perceive things in internet, Protocols' proceduralities are, in my sense, less obvious.
 
 However, Protocols do have a concrete impact on our interactions and on language; and this is obvious after the all debate regarding the so-called [Net Neutrality](https://en.wikipedia.org/wiki/Net_neutrality).
 
@@ -307,12 +307,12 @@ This is the pseudo code of what I'm trying to do:
 
       io.on('connection', (socket) => {
         socket.on('SEND_COORDINATES', function(data){
-        
+    
         // Here, send the data to the minomodem transmitter.
-      	// Once, the data is outputted to sounds: 
+      	// Once, the data is outputted to sounds:
       	// 1- use a minimodem receiver to decrypt back the sounds to text
      	// 2 - Then emit to the client to the new data
-     	
+    
         io.emit('RECEIVE_COORDINATES', data);
         })  
     });
@@ -334,7 +334,7 @@ Anyway, I now replaced my pseudo-code with (regular?) code and it looks like thi
 
       io.on('connection', (socket) => {
         socket.on('SEND_COORDINATES', function(data){
-        
+    
           const dataToString = `${data.x.toString()}, ${data.x.toString()}`;
           var baudRate = "60"
           var child = spawn("minimodem", ["-t", `${baudRate}`]);
@@ -380,10 +380,10 @@ Going back to the manifesto's draft:
 
 1. The user moves its cursor through the page
 
-2. The cursor's positions (coordinates) are monitored in the client side of the app, displayed in the webpage and sent to the server. 
+2. The cursor's positions (coordinates) are monitored in the client side of the app, displayed in the webpage and sent to the server.
 
 
-   ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Screen%20Shot%202018-11-15%20at%2010.47.46%20AM.png) 
+   ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Screen%20Shot%202018-11-15%20at%2010.47.46%20AM.png)
 
 3. The same coordinates are sent to the server side (`server.js`) using  `sockets`. And, for now, as soon as they are areceived  in the server side, they're sent back to the client side using `sockets` again.
 
@@ -394,34 +394,34 @@ Going back to the manifesto's draft:
 
 - **MY INTENTIONS BEHIND THE PROJECT:**
 
-This project is, for now, called Modem_Interface for a reason. The idea is the following: I would like to embed in internet's flow of interactions (between pages,  between user's inputs through the GUI) modems signals. In other words, I would like to insert into the *silent and cloudy* ideological circuit of internet analog and error-prone signals. 
+This project is, for now, called Modem_Interface for a reason. The idea is the following: I would like to embed in internet's flow of interactions (between pages,  between user's inputs through the GUI) modems signals. In other words, I would like to insert into the *silent and cloudy* ideological circuit of internet analog and error-prone signals.
 
 Initially, I developed two ideas in [this Google Doc](https://docs.google.com/document/d/1bUBO-7GQUZtH3D_C8OnMTckYUf8Rwwf_sxK29K3sMF0/edit?usp=sharing) I wanted to push further:
 
-1. **Drawing on Idea #9:**  "The modem affordances are used to perform actions on the internet. You browse on the internet through the slow rhythm of modems (goes back to net neutrality?)." 
+1. **Drawing on Idea #9:**  "The modem affordances are used to perform actions on the internet. You browse on the internet through the slow rhythm of modems (goes back to net neutrality?)."
 
-   This was still very vague but it's what I'm investigating here through coordinates. 
+   This was still very vague but it's what I'm investigating here through coordinates.
 
-   - Through this *trajectoire* of coordinates, my goal is to insert in the server-side a modem transmission mode of this data. 
+   - Through this *trajectoire* of coordinates, my goal is to insert in the server-side a modem transmission mode of this data.
 
      *This is in pseudo-code what I want to achieve here:*      
 
            io.on('connection', (socket) => {
             	  socket.on('SEND_COORDINATES', function(data){
-             
+    
                const dataToString = `${data.x.toString()}, ${data.x.toString()}`;
                var baudRate = "60"
                var child = spawn("minimodem", ["-t", `${baudRate}`]);
                child.stdin.write(dataToString);
-               
+    
                // Now that the coordinates are outputted in modem signals
                // Run the receiver mode of minimodem in order to decrypt these signals
-               
+    
                // Once the signals are decrypted from modems to texts (coordinates):
                // Emit them back to the client
-         
+    
                io.emit('RECEIVE_COORDINATES', data);
-         
+    
          	})
          });
 
@@ -439,7 +439,7 @@ Initially, I developed two ideas in [this Google Doc](https://docs.google.com/do
 
 Going back to the code for now:
 
-I realised that (obviously), it's quite hard to manipulate in real time the cursor position. I came acrocss this [stack overflow thread](https://stackoverflow.com/questions/4752501/move-the-mouse-pointer-to-a-specific-position) and it's, in fact, missing to the JavaScript API. **It's also because the mouse element is not belonging to the browser but by the Platform's system.** While someone is suggesting to run a quick [`c` script](http://hints.macworld.com/article.php?story=2008051406323031) in the backend, another idea is to remove the clicker, replace it by a *false* image of a clicker and handle clickevents [like this](http://jsfiddle.net/jaakkytt/9uczV/). Another idea would be to use mouse-lock to lock the cursor to specific coordinates that relates to the data coming from the server (and piped into `minimodem`). 
+I realised that (obviously), it's quite hard to manipulate in real time the cursor position. I came acrocss this [stack overflow thread](https://stackoverflow.com/questions/4752501/move-the-mouse-pointer-to-a-specific-position) and it's, in fact, missing to the JavaScript API. **It's also because the mouse element is not belonging to the browser but by the Platform's system.** While someone is suggesting to run a quick [`c` script](http://hints.macworld.com/article.php?story=2008051406323031) in the backend, another idea is to remove the clicker, replace it by a *false* image of a clicker and handle clickevents [like this](http://jsfiddle.net/jaakkytt/9uczV/). Another idea would be to use mouse-lock to lock the cursor to specific coordinates that relates to the data coming from the server (and piped into `minimodem`).
 
 ------
 
@@ -459,12 +459,12 @@ I realised that (obviously), it's quite hard to manipulate in real time the curs
 
 2. Added it in the `render()` section of the App.js file.
 
-3. Added a `position:absolute`  and a `width: 20px;`. For now, the fake cursor *is stuck* at the middle of the page. 
+3. Added a `position:absolute`  and a `width: 20px;`. For now, the fake cursor *is stuck* at the middle of the page.
 
 
    ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Screen%20Shot%202018-11-15%20at%204.23.36%20PM.png)
 
-4. Done! The *fake* cursor is now following the coordinates coming from the server. In order to do this, I added a dynamic `style` element in the image tag, in order to change its position based on the data received from the server and stored in the [state](https://reactjs.org/docs/state-and-lifecycle.html). If I stop the server, the mouse freezes. 
+4. Done! The *fake* cursor is now following the coordinates coming from the server. In order to do this, I added a dynamic `style` element in the image tag, in order to change its position based on the data received from the server and stored in the [state](https://reactjs.org/docs/state-and-lifecycle.html). If I stop the server, the mouse freezes.
 
    The interaction is already a bit glitchy and I love it!
 
@@ -475,7 +475,7 @@ EDIT 1: Alright :(  - So I added a full width/height iframe and I changed the `z
 
 EDIT 2: Found a [CSS hack](http://jsfiddle.net/dyV7L/). However, this basically just adds a div on top of the iframe. So it doesn't allows me to click on the links of the `iframe`, neither scroll it.
 
-EDIT 3: HOWEVER, I have an idea: I could just remove the cursor (and lock the iframe) when the user move. 
+EDIT 3: HOWEVER, I have an idea: I could just remove the cursor (and lock the iframe) when the user move.
 This will, in turn, allow the user to click on hyperlinks and scroll, assuming that you don't scroll (or click) when you move the cursor.
 
 # 2018-11-16 | 11:49
@@ -485,7 +485,7 @@ On the technical side, what need to be fixed:
 - On the server side
 - [ ] Launch two child processes at the same time.
 - [ ] When  var child = spawn("minimodem", ["-r", `${baudRate}`]); launches, pipes it back to the console.
-- On the client 
+- On the client
 - [ ] As soon as the user scrolls, it changes the hide-cursor div to `display:none` and release the iframe.
 - [ ] Do I really need sockets?
 
@@ -533,7 +533,7 @@ EDIT 3: Seems to work now...Let see how it goes.
 
 # 2018-11-16 | 13:58
 
-![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Screen%20Shot%202018-11-16%20at%202.04.08%20PM.png) 
+![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Screen%20Shot%202018-11-16%20at%202.04.08%20PM.png)
 
 
 This is what the design look like for now. It's an iframe of Wikipedia with the fake cursor on it. Every time the user moves the cursor, minimodem fires. However, for now the analog circuit I aim to create is not yet completed, because the signals are not decrypted and sent back to the client.
@@ -542,7 +542,7 @@ This is what the design look like for now. It's an iframe of Wikipedia with the 
 
 For now, I'm still working on this front-end hack I talked earlier - and I'm still not able to remove the div on top of the user when the user is inactive. Here's what I'm trying to achieve:
 
-1. Using [`react-idle-timer`](https://www.npmjs.com/package/react-idle-timer), I'm listening to the user's events. 
+1. Using [`react-idle-timer`](https://www.npmjs.com/package/react-idle-timer), I'm listening to the user's events.
 
 2. When the user is inactive after 1000 Milliseconds, I'm removing the div from the DOM
 
@@ -561,13 +561,13 @@ For now, I'm still working on this front-end hack I talked earlier - and I'm sti
              })
            }
 
-    ​	
+    ​
 
 # 2018-11-16 | 16:05
 
 Meeting with Pippin.
 
-As an alternative to minimodem, we came acoss an interesting idea: using a TTS module in order to output (Speak! Shout!) in real time the user's coordinates in binary codes. The idea would be the following: a) use a text to speech module to sonify these coordinates to binary codes; then b) use a *speech to text* module (maybe [this Watson package](https://www.ibm.com/watson/services/speech-to-text/)) to convert back the sonified binary codes to their digital form; and c) send back the binary codes to the client coordinates. 
+As an alternative to minimodem, we came acoss an interesting idea: using a TTS module in order to output (Speak! Shout!) in real time the user's coordinates in binary codes. The idea would be the following: a) use a text to speech module to sonify these coordinates to binary codes; then b) use a *speech to text* module (maybe [this Watson package](https://www.ibm.com/watson/services/speech-to-text/)) to convert back the sonified binary codes to their digital form; and c) send back the binary codes to the client coordinates.
 
 I like this idea.
 
@@ -604,7 +604,7 @@ Here is now the updated procedurality WITHOUT MINIMODEM:
 
 3. The mouse coordinates is received on the server side and passed to the robojs API - exact piece of code: `robot.moveMouse(x, y);` .
 
-4. That's it I guess. As a result the mouse is looped from the client to the server and from the server back to the client.
+4. That's it I guess. I don't need to `emit back`  the coordinates to the client using `RECEIVE_COORDINATES` . As a result the mouse is looped from the client to the server and altered from the server back to the client.
 
    EDIT: I'LL INVERSE THE COORDINATES COMING FROM THE BROWSER TO MAKE SURE THIS IS WORKING AS EXPECTED.
 

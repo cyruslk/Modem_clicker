@@ -11,16 +11,7 @@
 }
 
 
-.container{
-  color: white;
-  font-size: 0;
-}
 
-.cursor{
-  position: absolute;
-  width: 18px;
-  pointer-events:none
-}
 
 
 .hide-cursor {
