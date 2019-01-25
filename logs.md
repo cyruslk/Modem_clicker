@@ -1,7 +1,3 @@
-# ![alt text](https://66.media.tumblr.com/71a52c9b3787764fe53763f5dcdef63a/tumblr_o4zdxwrgGf1qixa76o1_640.png)
-
-
-
 # 2018-10-24
 
 Under the guidance of Pippin Barr, I'm approaching [DiSalvo](http://carldisalvo.com/)'s Adversarial Design applied to the context of (online) Game Design. Adversarial Design is a reference to Chantal Mouffe's notion of [Agonism](https://en.wikipedia.org/wiki/Agonism).
@@ -674,3 +670,11 @@ Since I'm now able to fire a `minimodem` analog signal (transporting embodied da
 - A chat interaction: when you type your text to be sent online through the chat, this text is first a) translated from text > modem, then b) translated back from modem > text and c) sent to the chat. This idea could be interesting (and playful?) if there's multipe persons interacting inside the same space at the same time - and therefore where the outptutted modem signals get mixed.
 
 On the technical side, if I don't want to use multiple machines (one for sending the content, one for receiving the content), I need to find a way to run these programs in parrallel.
+
+
+# 2019-01-24 | 19:08
+
+I love this image. Probably because of the way they illustrated the step at the middle (which is where the protocol establishes a connection). The blackbox explained.
+
+![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Screen%20Shot%202018-11-15%20at%2011.42.28%20AM.png) 
+
