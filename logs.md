@@ -1,3 +1,7 @@
+# ![alt text](https://66.media.tumblr.com/71a52c9b3787764fe53763f5dcdef63a/tumblr_o4zdxwrgGf1qixa76o1_640.png)
+
+
+
 # 2018-10-24
 
 Under the guidance of Pippin Barr, I'm approaching [DiSalvo](http://carldisalvo.com/)'s Adversarial Design applied to the context of (online) Game Design. Adversarial Design is a reference to Chantal Mouffe's notion of [Agonism](https://en.wikipedia.org/wiki/Agonism).
@@ -408,20 +412,20 @@ Initially, I developed two ideas in [this Google Doc](https://docs.google.com/do
 
            io.on('connection', (socket) => {
             	  socket.on('SEND_COORDINATES', function(data){
-    
+        
                const dataToString = `${data.x.toString()}, ${data.x.toString()}`;
                var baudRate = "60"
                var child = spawn("minimodem", ["-t", `${baudRate}`]);
                child.stdin.write(dataToString);
-    
+        
                // Now that the coordinates are outputted in modem signals
                // Run the receiver mode of minimodem in order to decrypt these signals
-    
+        
                // Once the signals are decrypted from modems to texts (coordinates):
                // Emit them back to the client
-    
+        
                io.emit('RECEIVE_COORDINATES', data);
-    
+        
          	})
          });
 
@@ -608,3 +612,65 @@ Here is now the updated procedurality WITHOUT MINIMODEM:
 
    EDIT: I'LL INVERSE THE COORDINATES COMING FROM THE BROWSER TO MAKE SURE THIS IS WORKING AS EXPECTED.
 
+
+
+# 2019-01-24 | 12:17
+
+
+I worked again on the server side and these are two `minimodem + node` options I could use for the project.  For the `pulseaudio` package that need to be run in order to create a connection with `minimodem`, I'm for now launching the program manually, then starting the application. I might find a way to automate this later.  I documented these two options in videos.
+
+1. The first option is to instantiate the minimodem program every time a socket is received using `child.stdin.write()`,   then kill the child using `child.stdin.end()`.  [Here's a video of what this option looks like.](https://vimeo.com/313030252)  
+
+   In this case, when I'm moving the cursor then using a new terminal to `minimodem --rx 100` the content, the position (for now I'm only using the x coordinates) is received and parsed correctly ~20% of the time.
+
+   ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/modem_browser_1.png)
+
+   ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/modem_browser_1_2.png)
+
+
+   The rest of the time, minimodem is not able to correctly retrieve the modem signal and outputs gibberish to the console. This is probably due to the fact that the signal outputted gets killed very quickly. It could be an option to investigate to add a timer to kill it after x seconds.
+
+   ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/modem_browser_1_3.png)
+
+
+   At the code's level, this is what's happening inside the `socket ` every time a coordinates has been received from the client to the server:
+
+   ```javascript
+   io.on('connection', (socket) => {
+       socket.on('SEND_COORDINATES', function(data){
+         const dataToString =
+          `${data.x.toString()},${data.y.toString()}`;
+             var child = spawn("minimodem", ["-t", "100"]);
+             child.stdin.write(dataToString);
+             child.stdin.end();
+       })
+   });
+   ```
+
+2. The other option is to launch minimodem using a pipe `|` command, then write directly the coordinates inside the terminal where minimodem is running, using `process.stdout.write();` [Here's a video of what this option looks like.](https://vimeo.com/313054527)  
+
+   In this case, the coordinates are correctly decrypted more frequently but there's a delay that makes that causes the program to output the same coordinates for a long time even tho the cursor moved. Interesting fact: even if the mouse does not move, the program continue to decrypt coordinates that are not exactly the same, like in the image below:
+
+   ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/modem_browser_2_2.png)
+
+   Howver, when the cursor moves very slowly and along a few pixels, the coordinates are correctly received:
+
+   ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/modem_browser_2_1.png) 
+
+    Somtimes, it appears also to render gibberish too:
+   ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/modem_browser_2.png) At the code's level, this is what's happening:
+
+   1. First, the `minimodem` gets called when the command is launched: 
+      `node server.js | minimodem --tx 100`
+   2.  Then, inside the socket: `process.stdout.write(dataToString);` 
+
+To clarify a few things, these are buggy but it's a parameter I'ld like to play with. Since I'm working with the agency of protocols (in the case of the network neutrality), I'm interested to use this transmitting protocol (and the way it performs) as a frame (- as the main entity) from which our interactions will depend.  In other words, I'm interested through this idea of (silent network) analog insertion to *infect* the network with irregular, slow, not so efficient technologies and apparatuses. 
+
+------
+
+Since I'm now able to fire a `minimodem` analog signal (transporting embodied data) every time a socket (aka, a real time event) is launched, here's a list of small explorations/prototypes I could do - to draw on my idea of a 'modem browser' - a browser where the user need to obey to the modem's rules and temporal restrictions:
+
+- When you click on an hyperlink in order to visit another page, the source code of the page you're about to visit is a) fetched into its textual format (using a [curl package](https://christianheilmann.com/2009/12/18/curl-your-view-source-of-the-web/)), then b) outputted from text > modem, then c) decrypted from modem > text, and finally attemped to be open as a webpage.
+- A chat interaction: when you type your text to be sent online through the chat, this text is first a) translated from text > modem, then b) translated back from modem > text and c) sent to the chat. This idea could be interesting (and playful?) if there's multipe persons interacting inside the same space at the same time - and therefore where the outptutted modem signals get mixed.
+
+On the technical side, if I don't want to use multiple machines (one for sending the content, one for receiving the content), I need to find a way to run these programs in parrallel.
