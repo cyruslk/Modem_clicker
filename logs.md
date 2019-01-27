@@ -408,20 +408,20 @@ Initially, I developed two ideas in [this Google Doc](https://docs.google.com/do
 
            io.on('connection', (socket) => {
             	  socket.on('SEND_COORDINATES', function(data){
-        
+            
                const dataToString = `${data.x.toString()}, ${data.x.toString()}`;
                var baudRate = "60"
                var child = spawn("minimodem", ["-t", `${baudRate}`]);
                child.stdin.write(dataToString);
-        
+            
                // Now that the coordinates are outputted in modem signals
                // Run the receiver mode of minimodem in order to decrypt these signals
-        
+            
                // Once the signals are decrypted from modems to texts (coordinates):
                // Emit them back to the client
-        
+            
                io.emit('RECEIVE_COORDINATES', data);
-        
+            
          	})
          });
 
@@ -667,6 +667,10 @@ To clarify a few things, these are buggy but it's a parameter I'ld like to play 
 Since I'm now able to fire a `minimodem` analog signal (transporting embodied data) every time a socket (aka, a real time event) is launched, here's a list of small explorations/prototypes I could do - to draw on my idea of a 'modem browser' - a browser where the user need to obey to the modem's rules and temporal restrictions:
 
 - When you click on an hyperlink in order to visit another page, the source code of the page you're about to visit is a) fetched into its textual format (using a [curl package](https://christianheilmann.com/2009/12/18/curl-your-view-source-of-the-web/)), then b) outputted from text > modem, then c) decrypted from modem > text, and finally attemped to be open as a webpage.
+  - EDIT: I can't really do this because of css stylesheets (...I could curl the website HTML page on my local machine but the page won't includes styling.)
+    - However, an option to consider would be to send the URL by modem,  decrypt it back and use it to access the page.
+    - Another option would be to use a bash command to ` curl pippinbarr.com > source.txt`, pipe the text to minimodem, get the signal to text back and replace the original dom of the targeted website by this minimodem'ed one.
+      - EDIT: I was able to directly send the HTML of a website to mimimodem using 
 - A chat interaction: when you type your text to be sent online through the chat, this text is first a) translated from text > modem, then b) translated back from modem > text and c) sent to the chat. This idea could be interesting (and playful?) if there's multipe persons interacting inside the same space at the same time - and therefore where the outptutted modem signals get mixed.
 
 On the technical side, if I don't want to use multiple machines (one for sending the content, one for receiving the content), I need to find a way to run these programs in parrallel.
@@ -677,4 +681,29 @@ On the technical side, if I don't want to use multiple machines (one for sending
 I love this image. Probably because of the way they illustrated the step at the middle (which is where the protocol establishes a connection). The blackbox explained.
 
 ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Screen%20Shot%202018-11-15%20at%2011.42.28%20AM.png) 
+
+
+
+# 2019-01-26 | 19:33
+
+I'm working in parrallel for the mouse interaction and the URL interaction. The URL interaction will probably have its own branch soon. For now, this is where I'm at with the mouse interaction idea:
+
+1. I first open pulseaudio, then launch the server like this: `node server.js | minimodem --tx 100`
+2. Then, I'm running manually (for now) ` minimodem --rx 100 > coordinates.txt`, so that all the retreived txt > modem > text coordinates are going to a .txt file.
+3. I'm formatting the coordinates passed to the transmitter like this: `[coordinateX, coordinateY]`.
+   1. The idea is now to read the content of the file, translate it to an array (using `][ ` as separator) and send back to the client the last element of this array.
+
+------
+
+For option 1 when minimodem is called - then killed - every time a socket fires , this is what the `coordinates.txt` file loooks like:
+
+```
+[0, 0][99, 218][102, 217][107, 217][134, 210][177, 202][233, 197][290, 195][325, 195][349, 195][372, 196][380, 198][328, 298][328, 299][319, 417][370, 364][367, 233][268, 247]≠¿Mæµ<[301, 406]Z¯ﬂ%˝{í[373, 393]íˇú*0^ˇ˜Ó[730, 649]ﬂ"ﬁ[873, 632][178, 660]Û Øk–ŒvØ◊ˇ≠◊üÔ[62˚&«=85]<Âıp[377,461][858,ìí¢ ]/˛œˇÛü»82Üõ5[385,432]7qU‰?Ì6[3±{=77?ö]ﬁÒ•h'6Ñ 
+```
+
+For option 2 when minimodem is only called one time then runs in the background - and where modem signals are longer , this is what the file looks like:
+
+```
+[346, 435][328, 451][711, 104][758, 105][763, 116][767, 105][780, 105][773, 113][175, 199][31, 222][32, 222][33, 222][38, 220][44, 219][51, 219][56, 219][59, 219][61, 219]
+```
 

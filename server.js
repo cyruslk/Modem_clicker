@@ -14,7 +14,7 @@ io = socket(server);
 
 io.on('connection', (socket) => {
     socket.on('SEND_COORDINATES', function(data){
-      const dataToString = `${data.x.toString()}, ${data.x.toString()}`;
+      const dataToString = `[${data.x.toString()}, ${data.y.toString()}]`;
       process.stdout.write(dataToString);
       io.emit('RECEIVE_COORDINATES', data);
     })
