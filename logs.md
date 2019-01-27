@@ -691,7 +691,7 @@ I'm working in parrallel for the mouse interaction and the URL interaction. The 
 1. I first open pulseaudio, then launch the server like this: `node server.js | minimodem --tx 100`
 2. Then, I'm running manually (for now) ` minimodem --rx 100 > coordinates.txt`, so that all the retreived txt > modem > text coordinates are going to a .txt file.
 3. I'm formatting the coordinates passed to the transmitter like this: `[coordinateX, coordinateY]`.
-   1. The idea is now to read the content of the file, translate it to an array (using `][ ` as separator) and send back to the client the last element of this array.
+   1. The idea is now to `fs.read()` the content of the file, translate it to an array (using `][ ` as the separator) and send back to the client the last element of this array.
 
 ------
 
@@ -707,3 +707,6 @@ For option 2 when minimodem is only called one time then runs in the background 
 [346, 435][328, 451][711, 104][758, 105][763, 116][767, 105][780, 105][773, 113][175, 199][31, 222][32, 222][33, 222][38, 220][44, 219][51, 219][56, 219][59, 219][61, 219]
 ```
 
+------
+
+Either I will use `string.split("][")` directly, either I will a) make sure only numbers and `][` are added to the file and b) run  `string.split("][")` . 

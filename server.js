@@ -10,10 +10,12 @@ server = app.listen(5000, function(){
 });
 
 
+
+
 io = socket(server);
 
 io.on('connection', (socket) => {
-    socket.on('SEND_COORDINATES', function(data){
+    socket.on('SEND_COORDINATES', function(data, callback){
       const dataToString = `[${data.x.toString()}, ${data.y.toString()}]`;
       process.stdout.write(dataToString);
       io.emit('RECEIVE_COORDINATES', data);
