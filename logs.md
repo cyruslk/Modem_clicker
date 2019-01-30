@@ -744,10 +744,35 @@ It's still buggy but that's part of the experience.
 
 
 
-# 2019-01-29 | 23:16
+# 2019-01-30 | 09:59
+
+
+I worked on new branch called [stop_sound](https://github.com/cyruslk/Modem_Interface/tree/stop_sound) where i tried this idea of modulating the speakers volume from 0 to 100%  based on the socket. I also started to use the content piped by the modem `--rx 100` and send it back to the client inside its own socket.
+
+Here's the procedurality of the all program:
+
+1.  The mouse from the webpage is hidden. The mouse is replaced by a fake icon of a mouse.
+2. When the user mousemove, it sends the coordinates to the server **(socket A - server)** and fires minimodem at volume 100.
+3. There's a timer that listens for the mousemove:
+   1. When the use stops mousemoving after `1000ms`, its send a new socket **(socket B - server)** to the server saying basically that the user is inactive.
+   2. Once this socket is received to the server, it mutes the volume - sets the volume to 0. This impacts the modem `--rx 100` which in turn stops trying to decrypt the sonified coordinates
+4.  In parrallel to the program, the `minimodem --rx 100` redirects everything written to the `stdout` to the `coordinates.txtx` file.
+   1. Inside **socket B - server**, the file is written, splitted into an array of coordinates. The last two elements of this array are sent back to the client. 
+5. These two elements become the `x` and `y ` position coordinates of the fake icon.
+
+------
+
+
+Here's what the array coming from the server and sent to the client via **socket B - server** looks like:
+
+![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/stop_sound/img_process/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-01-29%20%C3%A0%2019.57.48.png)  
 
 
 
-I worked on new branch called [stop_sound](https://github.com/cyruslk/Modem_Interface/tree/stop_sound) where i tried this idea of modulating the speakers volume from 0 to 100%  based on the socket. I'm also in this branch 
+Here's what the last two coordinates/ number-ish for this array looks like when they're isolated.
 
- 
+![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/stop_sound/img_process/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-01-30%20%C3%A0%2000.04.47.png) 
+
+
+
+
