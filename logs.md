@@ -408,20 +408,20 @@ Initially, I developed two ideas in [this Google Doc](https://docs.google.com/do
 
            io.on('connection', (socket) => {
             	  socket.on('SEND_COORDINATES', function(data){
-            
+    
                const dataToString = `${data.x.toString()}, ${data.x.toString()}`;
                var baudRate = "60"
                var child = spawn("minimodem", ["-t", `${baudRate}`]);
                child.stdin.write(dataToString);
-            
+    
                // Now that the coordinates are outputted in modem signals
                // Run the receiver mode of minimodem in order to decrypt these signals
-            
+    
                // Once the signals are decrypted from modems to texts (coordinates):
                // Emit them back to the client
-            
+    
                io.emit('RECEIVE_COORDINATES', data);
-            
+    
          	})
          });
 
@@ -651,16 +651,16 @@ I worked again on the server side and these are two `minimodem + node` options I
 
    Howver, when the cursor moves very slowly and along a few pixels, the coordinates are correctly received:
 
-   ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/modem_browser_2_1.png) 
+   ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/modem_browser_2_1.png)
 
     Somtimes, it appears also to render gibberish too:
    ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/modem_browser_2.png) At the code's level, this is what's happening:
 
-   1. First, the `minimodem` gets called when the command is launched: 
+   1. First, the `minimodem` gets called when the command is launched:
       `node server.js | minimodem --tx 100`
-   2.  Then, inside the socket: `process.stdout.write(dataToString);` 
+   2.  Then, inside the socket: `process.stdout.write(dataToString);`
 
-To clarify a few things, these are buggy but it's a parameter I'ld like to play with. Since I'm working with the agency of protocols (in the case of the network neutrality), I'm interested to use this transmitting protocol (and the way it performs) as a frame (- as the main entity) from which our interactions will depend.  In other words, I'm interested through this idea of (silent network) analog insertion to *infect* the network with irregular, slow, not so efficient technologies and apparatuses. 
+To clarify a few things, these are buggy but it's a parameter I'ld like to play with. Since I'm working with the agency of protocols (in the case of the network neutrality), I'm interested to use this transmitting protocol (and the way it performs) as a frame (- as the main entity) from which our interactions will depend.  In other words, I'm interested through this idea of (silent network) analog insertion to *infect* the network with irregular, slow, not so efficient technologies and apparatuses.
 
 ------
 
@@ -670,7 +670,7 @@ Since I'm now able to fire a `minimodem` analog signal (transporting embodied da
   - EDIT: I can't really do this because of css stylesheets (...I could curl the website HTML page on my local machine but the page won't includes styling.)
     - However, an option to consider would be to send the URL by modem,  decrypt it back and use it to access the page.
     - Another option would be to use a bash command to ` curl pippinbarr.com > source.txt`, pipe the text to minimodem, get the signal to text back and replace the original dom of the targeted website by this minimodem'ed one.
-      - EDIT: I was able to directly send the HTML of a website to mimimodem using 
+      - EDIT: I was able to directly send the HTML of a website to mimimodem using
 - A chat interaction: when you type your text to be sent online through the chat, this text is first a) translated from text > modem, then b) translated back from modem > text and c) sent to the chat. This idea could be interesting (and playful?) if there's multipe persons interacting inside the same space at the same time - and therefore where the outptutted modem signals get mixed.
 
 On the technical side, if I don't want to use multiple machines (one for sending the content, one for receiving the content), I need to find a way to run these programs in parrallel.
@@ -680,7 +680,7 @@ On the technical side, if I don't want to use multiple machines (one for sending
 
 I love this image. Probably because of the way they illustrated the step at the middle (which is where the protocol establishes a connection). The blackbox explained.
 
-![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Screen%20Shot%202018-11-15%20at%2011.42.28%20AM.png) 
+![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Screen%20Shot%202018-11-15%20at%2011.42.28%20AM.png)
 
 
 
@@ -698,7 +698,7 @@ I'm working in parrallel for the mouse interaction and the URL interaction. The 
 For option 1 when minimodem is called - then killed - every time a socket fires , this is what the `coordinates.txt` file loooks like:
 
 ```
-[0, 0][99, 218][102, 217][107, 217][134, 210][177, 202][233, 197][290, 195][325, 195][349, 195][372, 196][380, 198][328, 298][328, 299][319, 417][370, 364][367, 233][268, 247]≠¿Mæµ<[301, 406]Z¯ﬂ%˝{í[373, 393]íˇú*0^ˇ˜Ó[730, 649]ﬂ"ﬁ[873, 632][178, 660]Û Øk–ŒvØ◊ˇ≠◊üÔ[62˚&«=85]<Âıp[377,461][858,ìí¢ ]/˛œˇÛü»82Üõ5[385,432]7qU‰?Ì6[3±{=77?ö]ﬁÒ•h'6Ñ 
+[0, 0][99, 218][102, 217][107, 217][134, 210][177, 202][233, 197][290, 195][325, 195][349, 195][372, 196][380, 198][328, 298][328, 299][319, 417][370, 364][367, 233][268, 247]≠¿Mæµ<[301, 406]Z¯ﬂ%˝{í[373, 393]íˇú*0^ˇ˜Ó[730, 649]ﬂ"ﬁ[873, 632][178, 660]Û Øk–ŒvØ◊ˇ≠◊üÔ[62˚&«=85]<Âıp[377,461][858,ìí¢ ]/˛œˇÛü»82Üõ5[385,432]7qU‰?Ì6[3±{=77?ö]ﬁÒ•h'6Ñ
 ```
 
 For option 2 when minimodem is only called one time then runs in the background - and where modem signals are longer , this is what the file looks like:
@@ -709,7 +709,7 @@ For option 2 when minimodem is only called one time then runs in the background 
 
 ------
 
-Either I will use `string.split("][")` directly, either I will a) make sure only numbers and `][` are added to the file and b) run  `string.split("][")` . 
+Either I will use `string.split("][")` directly, either I will a) make sure only numbers and `][` are added to the file and b) run  `string.split("][")` .
 
 
 
@@ -721,7 +721,7 @@ Exploring these two options and option one where I kill the process each time gi
 383,1236ˇí43ÓwﬁŒòÃˇü792,242wˇMí7s∑ﬂ79ªÆõ≤öMÃê◊∂˜ﬂ1ˇ˛˚Ÿ”õÁ794,242≤ˇ
 ```
 
-With this option it's only when I'm moving very slowly the mouse that the text in this file have a chance to be representative. Otherwise it's modem gibberish. 
+With this option it's only when I'm moving very slowly the mouse that the text in this file have a chance to be representative. Otherwise it's modem gibberish.
 
 The other option is more representative and pipes to the `coordinates.txt` file something much more accurate - but there's a delay (probably caused by the way minimodem was built) that makes the application less interesting: because even you don't move the app still sends signals - which is quite weird.
 
@@ -739,6 +739,47 @@ I tried to mimick the experience turning off the sound when my mouse was not mov
 ```
 
 It's still buggy but that's part of the experience.
+
+------
+
+
+
+# 2019-01-30 | 09:59
+
+
+I worked on new branch called [stop_sound](https://github.com/cyruslk/Modem_Interface/tree/stop_sound) where i tried this idea of modulating the speakers volume from 0 to 100%  based on the socket. I also started to use the content piped by the modem `--rx 100` and send it back to the client inside its own socket.
+
+Here's the procedurality of the all program:
+
+1.  The mouse from the webpage is hidden. The mouse is replaced by a fake icon of a mouse.
+2. When the user mousemove, it sends the coordinates to the server **(socket A - server)** and fires minimodem at volume 100.
+3. There's a timer that listens for the mousemove:
+   1. When the use stops mousemoving after `1000ms`, its send a new socket **(socket B - server)** to the server saying basically that the user is inactive.
+   2. Once this socket is received to the server, it mutes the volume - sets the volume to 0. This impacts the modem `--rx 100` which in turn stops trying to decrypt the sonified coordinates
+4.  In parrallel to the program, the `minimodem --rx 100` redirects everything written to the `stdout` to the `coordinates.txtx` file.
+   1. Inside **socket B - server**, the file is written, splitted into an array of coordinates. The last two elements of this array are sent back to the client.
+5. These two elements become the `x` and `y ` position coordinates of the fake icon.
+
+------
+
+
+Array coming from the server and sent to the client via **socket B - server**:
+
+![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/stop_sound/img_process/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-01-29%20%C3%A0%2019.57.48.png)  
+
+
+
+Last two coordinates/ number-ish splited from this array:
+
+![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/stop_sound/img_process/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-01-30%20%C3%A0%2000.04.47.png)
+
+
+
+
+------
+
+Here's now [a video of what it looks like](https://vimeo.com/314274269) when i'm replace the cursor by a fake icon that depends of these coordinates coming from the server. The sound is not very loud so don't hesistate to turn it on at 100%
+
 
 
 
