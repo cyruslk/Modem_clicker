@@ -4,7 +4,6 @@ const { spawn } = require('child_process');
 const loudness = require('loudness')
 
 
-
 var app = express();
 
 server = app.listen(5000, function(){
@@ -13,13 +12,19 @@ server = app.listen(5000, function(){
 
 
 
-
 io = socket(server);
 
 io.on('connection', (socket) => {
     socket.on('SEND_COORDINATES', function(data, callback){
+      loudness.setVolume(100, (err) => {
+          console.log(err);
+        })
       const dataToString = `[${data.x.toString()}, ${data.y.toString()}]`;
       process.stdout.write(dataToString);
-      io.emit('RECEIVE_COORDINATES', data);
+    })
+    socket.on('STOP_SOUND', function(data, callback){
+      loudness.setVolume(0, (err) => {
+        console.log(err);
+      })
     })
 });

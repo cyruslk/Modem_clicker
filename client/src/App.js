@@ -33,6 +33,10 @@ class App extends React.Component{
               y: this.state.y,
             })
         }
+        this.stopSound = ev => {
+          console.log("sending to server!");
+            this.socket.emit('STOP_SOUND')
+          }
     }
 
     _onAction = (e) => {
@@ -44,7 +48,8 @@ class App extends React.Component{
      }
 
      _onIdle(e) {
-      console.log('user is not active', e)
+      console.log('user is not active', e);
+      this.stopSound();
     }
 
     componentDidMount() {
@@ -96,7 +101,7 @@ class App extends React.Component{
             element={document}
             onActive={this.onActive}
             onIdle={this.onIdle}
-            timeout={1000}>
+            timeout={2000}>
             <div className="container"
               style={{backgroundColor: "white"}}
               onMouseMove={this._onMouseMove}>
