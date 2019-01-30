@@ -778,8 +778,11 @@ Last two coordinates/ number-ish splited from this array:
 
 ------
 
-Here's now [a video of what it looks like](https://vimeo.com/314274269) when i'm replace the cursor by a fake icon that depends of these coordinates coming from the server. The sound is not very loud so don't hesistate to turn it on at 100%
+Here's now [a video of what it looks like](https://vimeo.com/314274269) when i'm replace the cursor by a fake icon that depends of these coordinates coming from the server. The sound is not very loud so don't hesistate to turn it on at 100%. We can see here that the fake icon is indeed moving based on the received data. Stills from the video:
 
 
+![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-01-30%20%C3%A0%2011.10.00.png) 
 
+![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-01-30%20%C3%A0%2011.10.09.png)  
 
+![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-01-30%20%C3%A0%2011.10.12.png)  
