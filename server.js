@@ -18,7 +18,7 @@ io = socket(server);
 
 io.on('connection', (socket) => {
     socket.on('SEND_COORDINATES', function(data, callback){
-      loudness.setVolume(100, (err) => {
+      loudness.setVolume(10, (err) => {
           console.log(err);
         })
       const dataToString = `[${data.x.toString()}, ${data.y.toString()}]`;

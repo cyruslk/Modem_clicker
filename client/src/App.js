@@ -59,7 +59,15 @@ class App extends React.Component{
       this.socket.on(
         "SEND_BACK",
         (ele) => {
-          console.log(ele.split("]["));
+          let coordinatesEle = ele.split("][");
+          let lastEle = coordinatesEle[coordinatesEle.length -1];
+          console.log(lastEle.split(","));
+          let splitedLastEle = lastEle.split(",");
+          console.log(splitedLastEle[0], splitedLastEle[1]);
+          this.setState({
+            xx: splitedLastEle[0],
+            yy: splitedLastEle[1]
+          })
         }
       );
 
@@ -81,26 +89,19 @@ class App extends React.Component{
       this.sendCoordinates();
     }
 
-
-
-
-
-
     render(){
-
-
+      console.log(this.state.xx, this.state.yy);
       let style_clicker = {
           position: "absolute",
-          left: this.state.xx,
-          top:this.state.yy,
-          zIndex: 100000
+          left: `${this.state.xx}px`,
+          top: `${this.state.yy}px`,
+          zIndex: 100000,
+          width: "20px"
       }
-
 
       let display = {
         display: this.state.display
       }
-
 
         return (
           <div>
@@ -113,6 +114,14 @@ class App extends React.Component{
             <div className="container"
               style={{backgroundColor: "white"}}
               onMouseMove={this._onMouseMove}>
+
+              <img className="cursor"
+              style={style_clicker}
+              src="https://bit.ly/2QJEezD" />
+
+          <div className="hide-cursor" style={display}></div>
+
+
             </div>
             </IdleTimer>
           </div>

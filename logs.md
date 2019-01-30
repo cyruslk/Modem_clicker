@@ -740,5 +740,14 @@ I tried to mimick the experience turning off the sound when my mouse was not mov
 
 It's still buggy but that's part of the experience.
 
+------
 
 
+
+# 2019-01-29 | 23:16
+
+
+
+I worked on new branch called [stop_sound](https://github.com/cyruslk/Modem_Interface/tree/stop_sound) where i tried this idea of modulating the speakers volume from 0 to 100%  based on the socket. I'm also in this branch 
+
+ 
