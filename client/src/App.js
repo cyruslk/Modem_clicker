@@ -22,6 +22,9 @@ class App extends React.Component{
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
         this.idleTimer = null;
         this.socket = io('localhost:5000');
+        this.idleTimer = null;
+        this.onActive = this._onActive.bind(this)
+        this.onIdle = this._onIdle.bind(this)
 
         this.sendCoordinates = ev => {
             this.socket.emit(
@@ -29,7 +32,6 @@ class App extends React.Component{
               x: this.state.x,
               y: this.state.y,
             })
-
         }
     }
 
@@ -41,14 +43,13 @@ class App extends React.Component{
        console.log('time remaining', this.idleTimer.getRemainingTime())
      }
 
-     _onIdle =(e) => {
-       console.log("iddle");
-       this.socket.emit('PAUSE_COORDINATES')
-     }
+     _onIdle(e) {
+      console.log('user is not active', e)
+    }
 
     componentDidMount() {
       this.updateWindowDimensions();
-      window.addEventListener('resize', this.updateWindowDimensions);
+      window.addEventListener('resize', this.updateWindowDimensions)
     }
 
     componentWillUnmount() {
@@ -69,7 +70,11 @@ class App extends React.Component{
 
 
 
+
+
     render(){
+
+      console.log(this.state.x, this.state.y);
 
       let style_clicker = {
           position: "absolute",
@@ -91,13 +96,12 @@ class App extends React.Component{
             element={document}
             onActive={this.onActive}
             onIdle={this.onIdle}
-            onAction={this.onAction}
-            debounce={250}
-            timeout={100} />
+            timeout={1000}>
             <div className="container"
               style={{backgroundColor: "white"}}
               onMouseMove={this._onMouseMove}>
             </div>
+            </IdleTimer>
           </div>
         )
     }

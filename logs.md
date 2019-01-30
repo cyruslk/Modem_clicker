@@ -710,3 +710,35 @@ For option 2 when minimodem is only called one time then runs in the background 
 ------
 
 Either I will use `string.split("][")` directly, either I will a) make sure only numbers and `][` are added to the file and b) run  `string.split("][")` . 
+
+
+
+# 2019-01-29 | 18:17
+
+Exploring these two options and option one where I kill the process each time gives very limited results - mostly modem gibberish. I runed the program with the code 1 and this is what was piped to the `coordinates.txt` file:
+
+```
+383,1236ˇí43ÓwﬁŒòÃˇü792,242wˇMí7s∑ﬂ79ªÆõ≤öMÃê◊∂˜ﬂ1ˇ˛˚Ÿ”õÁ794,242≤ˇ
+```
+
+With this option it's only when I'm moving very slowly the mouse that the text in this file have a chance to be representative. Otherwise it's modem gibberish. 
+
+The other option is more representative and pipes to the `coordinates.txt` file something much more accurate - but there's a delay (probably caused by the way minimodem was built) that makes the application less interesting: because even you don't move the app still sends signals - which is quite weird.
+
+However I found an interesting way to tackle this when I went back to the code of my [2XTWEETSXMODEMSXTEXTXTWEET](https://twitter.com/2XTXMXTXT) project: playing with the sound level of the machine.
+
+The procedure of the script would then be the following:
+
+1. When the client moves the mouse, write the coordinates to the console with the minimodem running.
+2. When the client stops moving the mouse, shut down the sound of the machine. The signal won't be outputted and the minimodem --rx will stop decrypting.
+
+I tried to mimick the experience turning off the sound when my mouse was not moving and turning on the sound whwn it was and this is what the `coordinates.txt` file looked like:
+
+```
+≤íb¢íí][662, 422][662, 422][662, 423][662, [661, 424][66≤äb¢í¢][661, 61, 424][662, 4¢í¢][662, 424¢í¢][662, 423][¶][662, 423][&][663, 422][6í][665, 423][66][672, 428][675”¬b¢öí][681, 434¢ö∫][688, 438][Ç][693, 441][69µe ≤b¢¢ö][698, 444 444][701, 445]
+```
+
+It's still buggy but that's part of the experience.
+
+
+
