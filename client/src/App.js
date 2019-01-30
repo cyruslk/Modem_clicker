@@ -34,27 +34,36 @@ class App extends React.Component{
             })
         }
         this.stopSound = ev => {
-          console.log("sending to server!");
             this.socket.emit('STOP_SOUND')
           }
     }
 
     _onAction = (e) => {
-      console.log('user did something', e)
+      // console.log('user did something', e)
      }
 
      _onActive = (e) => {
-       console.log('time remaining', this.idleTimer.getRemainingTime())
+       // console.log('time remaining', this.idleTimer.getRemainingTime())
      }
 
      _onIdle(e) {
-      console.log('user is not active', e);
       this.stopSound();
     }
+
+
 
     componentDidMount() {
       this.updateWindowDimensions();
       window.addEventListener('resize', this.updateWindowDimensions)
+
+      this.socket.on(
+        "SEND_BACK",
+        (ele) => {
+          console.log(ele.split("]["));
+        }
+      );
+
+
     }
 
     componentWillUnmount() {
@@ -79,7 +88,6 @@ class App extends React.Component{
 
     render(){
 
-      console.log(this.state.x, this.state.y);
 
       let style_clicker = {
           position: "absolute",

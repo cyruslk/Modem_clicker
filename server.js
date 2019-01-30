@@ -2,6 +2,8 @@ var express = require('express');
 var socket = require('socket.io');
 const { spawn } = require('child_process');
 const loudness = require('loudness')
+var fs = require('fs');
+
 
 
 var app = express();
@@ -26,5 +28,8 @@ io.on('connection', (socket) => {
       loudness.setVolume(0, (err) => {
         console.log(err);
       })
+      fs.readFile('coordinates.txt', 'utf8', function(err, contents) {
+        socket.emit("SEND_BACK", contents)
+    });
     })
 });
