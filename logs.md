@@ -789,8 +789,16 @@ Here's now [a video of what it looks like](https://vimeo.com/314274269) when i'm
 
 As a trick, I'm considering running a [RegExp](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/RegExp) or a similiar thing (`loop` , `filter()`) to keep only the numbers inside this array - then assign the last two ones as `x, y ` coordinates for the fake cursor. I'm also planning to conduct a playtesting session for the different options that I have.
 
-I find that this project is a very clear example of Schön's idea of a "[Reflective Conversation](https://link.springer.com/content/pdf/10.1007%2FBF01580516.pdf)" (1992) with the materials of the design situation. 
+I find that this project is a very clear example of Schön's idea of a "[Reflective Conversation](https://link.springer.com/content/pdf/10.1007%2FBF01580516.pdf)" (1992) with the materials of the design situation. By changing small pieces of code inside the project's program, the project's context (and how it appears) changes significantly.
 
-By changing small pieces of code inside the project's program, the project's context (and how it appears) changes significantly.
+------
 
- 
+Things to think of:
+
+- [ ] What is the goal of this thing? Is it a game? Is the interaction open-ended? Since I'm using `sockets`, a variety of users can interact with the program at the same time. Do I want to use this feature to create a multi-player game/experience?
+
+- [ ] If I'm showcasing this experience for next crit, what will be its form? Would it be interesting to use a raspberry-pi maybe? Or a simple setup with a macbook pro laptop borrowed from CDA is enough?
+
+- [ ] Important point - how do I handle the tension between legible/gibberish data coming from the minimodem program? Do I need to use tricks to such as RegExp (to make the experience playful~) or no?
+
+I guess these questions/answers will emerge during the playtesting session.
