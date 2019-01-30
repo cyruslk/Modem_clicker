@@ -801,4 +801,8 @@ Things to think of:
 
 - [ ] Important point - how do I handle the tension between legible/gibberish data coming from the minimodem program? Do I need to use tricks to such as RegExp (to make the experience playful~) or no?
 
+
 I guess these questions/answers will emerge during the playtesting session.
+
+
+- [ ]  Another important point is: what shoud appeat on the webpage? Do i still continue with this idea of webframes? 
