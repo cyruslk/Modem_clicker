@@ -767,8 +767,6 @@ Array coming from the server and sent to the client via **socket B - server**:
 
 ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/stop_sound/img_process/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-01-29%20%C3%A0%2019.57.48.png)  
 
-
-
 Last two coordinates/ number-ish splited from this array:
 
 ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/stop_sound/img_process/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-01-30%20%C3%A0%2000.04.47.png)
@@ -786,3 +784,13 @@ Here's now [a video of what it looks like](https://vimeo.com/314274269) when i'm
 ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-01-30%20%C3%A0%2011.10.09.png)  
 
 ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-01-30%20%C3%A0%2011.10.12.png)  
+
+------
+
+As a trick, I'm considering running a [RegExp](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/RegExp) or a similiar thing (`loop` , `filter()`) to keep only the numbers inside this array - then assign the last two ones as `x, y ` coordinates for the fake cursor. I'm also planning to conduct a playtesting session for the different options that I have.
+
+I find that this project is a very clear example of Schön's idea of a "[Reflective Conversation](https://link.springer.com/content/pdf/10.1007%2FBF01580516.pdf)" (1992) with the materials of the design situation. 
+
+By changing small pieces of code inside the project's program, the project's context (and how it appears) changes significantly.
+
+ 
