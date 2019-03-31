@@ -307,12 +307,12 @@ This is the pseudo code of what I'm trying to do:
 
       io.on('connection', (socket) => {
         socket.on('SEND_COORDINATES', function(data){
-    
+
         // Here, send the data to the minomodem transmitter.
       	// Once, the data is outputted to sounds:
       	// 1- use a minimodem receiver to decrypt back the sounds to text
      	// 2 - Then emit to the client to the new data
-    
+
         io.emit('RECEIVE_COORDINATES', data);
         })  
     });
@@ -334,14 +334,14 @@ Anyway, I now replaced my pseudo-code with (regular?) code and it looks like thi
 
       io.on('connection', (socket) => {
         socket.on('SEND_COORDINATES', function(data){
-    
+
           const dataToString = `${data.x.toString()}, ${data.x.toString()}`;
           var baudRate = "60"
           var child = spawn("minimodem", ["-t", `${baudRate}`]);
           child.stdin.write(dataToString);
-    
+
       	  io.emit('RECEIVE_COORDINATES', data);
-    
+
     	})
     });
 
@@ -408,20 +408,20 @@ Initially, I developed two ideas in [this Google Doc](https://docs.google.com/do
 
            io.on('connection', (socket) => {
             	  socket.on('SEND_COORDINATES', function(data){
-        
+
                const dataToString = `${data.x.toString()}, ${data.x.toString()}`;
                var baudRate = "60"
                var child = spawn("minimodem", ["-t", `${baudRate}`]);
                child.stdin.write(dataToString);
-        
+
                // Now that the coordinates are outputted in modem signals
                // Run the receiver mode of minimodem in order to decrypt these signals
-        
+
                // Once the signals are decrypted from modems to texts (coordinates):
                // Emit them back to the client
-        
+
                io.emit('RECEIVE_COORDINATES', data);
-        
+
          	})
          });
 
@@ -757,28 +757,23 @@ Here's the procedurality of the all program:
    1. When the use stops mousemoving after `1000ms`, its send a new socket **(socket B - server)** to the server saying basically that the user is inactive.
    2. Once this socket is received to the server, it mutes the volume - sets the volume to 0. This impacts the modem `--rx 100` which in turn stops trying to decrypt the sonified coordinates
 4.  In parrallel to the program, the `minimodem --rx 100` redirects everything written to the `stdout` to the `coordinates.txtx` file.
-   1. Inside **socket B - server**, the file is written, splitted into an array of coordinates. The last two elements of this array are sent back to the client.
+   1. Inside **socket B - server**, the file is written, splitted into an array of coordinates. The last two elements of this array are sent back to the client. 
 5. These two elements become the `x` and `y ` position coordinates of the fake icon.
 
 ------
 
 
-Array coming from the server and sent to the client via **socket B - server**:
+Here's what the array coming from the server and sent to the client via **socket B - server** looks like:
 
 ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/stop_sound/img_process/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-01-29%20%C3%A0%2019.57.48.png)  
 
-Last two coordinates/ number-ish splited from this array:
+
+
+Here's what the last two coordinates/ number-ish for this array looks like when they're isolated.
 
 ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/stop_sound/img_process/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-01-30%20%C3%A0%2000.04.47.png)
 
 
-
-------
-
-Here's now [a video of what it looks like](https://vimeo.com/314274269) when i'm replace the cursor by a fake icon that depends of these coordinates coming from the server. The sound is not very loud so don't hesistate to turn it on at 100%. We can see here that the fake icon is indeed moving based on the received data. Stills from the video:
-
-
-![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-01-30%20%C3%A0%2011.10.00.png) 
 
 ![alt text](https://raw.githubusercontent.com/cyruslk/Modem_Interface/master/img_process/Capture%20d%E2%80%99%C3%A9cran%2C%20le%202019-01-30%20%C3%A0%2011.10.09.png)  
 
@@ -804,7 +799,7 @@ Things to think of:
 I guess these questions/answers will emerge during the playtesting session.
 
 
-- [ ] Another important point is: what shoud appeat on the webpage? Do i still continue with this idea of webframes? 
+- [ ] Another important point is: what shoud appeat on the webpage? Do i still continue with this idea of webframes?
 
 # 2019.02.20 | 15:24
 
@@ -813,10 +808,9 @@ HOW TO RUN THE APP FOR NOW:
 
 ```
 In a new tab for each:
-1. pulseaudio 
+1. pulseaudio
 2. node server.js | minimodem --tx 100;
 3. minimodem --rx 100 > coordinates.txt
 4. cd client
 	npm start
 ```
-

@@ -1,6 +1,5 @@
 import React from "react";
 import io from "socket.io-client";
-import Iframe from 'react-iframe';
 import IdleTimer from 'react-idle-timer'
 import './App.css';
 
@@ -33,23 +32,45 @@ class App extends React.Component{
               y: this.state.y,
             })
         }
+        this.stopSound = ev => {
+            this.socket.emit('STOP_SOUND')
+          }
     }
 
     _onAction = (e) => {
-      console.log('user did something', e)
+      // console.log('user did something', e)
      }
 
      _onActive = (e) => {
-       console.log('time remaining', this.idleTimer.getRemainingTime())
+       // console.log('time remaining', this.idleTimer.getRemainingTime())
      }
 
      _onIdle(e) {
-      console.log('user is not active', e)
+      this.stopSound();
     }
+
+
 
     componentDidMount() {
       this.updateWindowDimensions();
       window.addEventListener('resize', this.updateWindowDimensions)
+
+      this.socket.on(
+        "SEND_BACK",
+        (ele) => {
+          let coordinatesEle = ele.split("][");
+          let lastEle = coordinatesEle[coordinatesEle.length -1];
+          console.log(lastEle.split(","));
+          let splitedLastEle = lastEle.split(",");
+          console.log(splitedLastEle[0], splitedLastEle[1]);
+          this.setState({
+            xx: splitedLastEle[0],
+            yy: splitedLastEle[1]
+          })
+        }
+      );
+
+
     }
 
     componentWillUnmount() {
@@ -67,27 +88,19 @@ class App extends React.Component{
       this.sendCoordinates();
     }
 
-
-
-
-
-
     render(){
-
-      console.log(this.state.x, this.state.y);
-
+      console.log(this.state.xx, this.state.yy);
       let style_clicker = {
           position: "absolute",
-          left: this.state.xx,
-          top:this.state.yy,
-          zIndex: 100000
+          left: `${this.state.xx}px`,
+          top: `${this.state.yy}px`,
+          zIndex: 100000,
+          width: "20px"
       }
-
 
       let display = {
         display: this.state.display
       }
-
 
         return (
           <div>
@@ -96,10 +109,21 @@ class App extends React.Component{
             element={document}
             onActive={this.onActive}
             onIdle={this.onIdle}
-            timeout={1000}>
+            timeout={2000}>
             <div className="container"
               style={{backgroundColor: "white"}}
               onMouseMove={this._onMouseMove}>
+
+              <img
+                className="cursor"
+                alt={"img"}
+                style={style_clicker}
+                src="https://bit.ly/2QJEezD"
+              />
+
+          <div className="hide-cursor" style={display}></div>
+
+
             </div>
             </IdleTimer>
           </div>
