@@ -115,9 +115,12 @@ class App extends React.Component{
               style={{backgroundColor: "white"}}
               onMouseMove={this._onMouseMove}>
 
-              <img className="cursor"
-              style={style_clicker}
-              src="https://bit.ly/2QJEezD" />
+              <img
+                className="cursor"
+                alt={"img"}
+                style={style_clicker}
+                src="https://bit.ly/2QJEezD"
+              />
 
           <div className="hide-cursor" style={display}></div>
 
