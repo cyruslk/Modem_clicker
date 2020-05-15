@@ -561,7 +561,7 @@ For now, I'm still working on this front-end hack I talked earlier - and I'm sti
              })
            }
 
-    ​
+
 
 # 2018-11-16 | 16:05
 
@@ -757,7 +757,7 @@ Here's the procedurality of the all program:
    1. When the use stops mousemoving after `1000ms`, its send a new socket **(socket B - server)** to the server saying basically that the user is inactive.
    2. Once this socket is received to the server, it mutes the volume - sets the volume to 0. This impacts the modem `--rx 100` which in turn stops trying to decrypt the sonified coordinates
 4.  In parrallel to the program, the `minimodem --rx 100` redirects everything written to the `stdout` to the `coordinates.txtx` file.
-   1. Inside **socket B - server**, the file is written, splitted into an array of coordinates. The last two elements of this array are sent back to the client. 
+   1. Inside **socket B - server**, the file is written, splitted into an array of coordinates. The last two elements of this array are sent back to the client.
 5. These two elements become the `x` and `y ` position coordinates of the fake icon.
 
 ------
@@ -814,3 +814,12 @@ In a new tab for each:
 4. cd client
 	npm start
 ```
+
+
+
+# 2019.03.31 | 14:08
+
+- Sending images with minimodem
+  - pixels => images | images => pixels
+- Chrome extensions?
+  - Sending source code to Chrome?
