@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/cyruslk/Modem_Interface#readme",
   "dependencies": {
-    "async": "^2.6.1",
+    "async": "^3.2.2",
     "child-process-async": "^1.0.1",
     "child_process": "^1.0.2",
     "express": "^4.16.4",
